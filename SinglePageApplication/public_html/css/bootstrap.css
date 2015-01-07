@@ -743,7 +743,9 @@ pre code {
 .container_countdown {
     padding-right: 15px;
     padding-left: 15px;
-    background-image: url(../img/countdown/image.jpg);
+    height: 450px;
+    background-image: url(../img/countdown/background.jpg);
+    background-attachment: fixed;
     display: block;
 }
 
@@ -5800,30 +5802,53 @@ button.close {
     text-align: center;
 }
 
+#countdown .countdown-datum{
+    color: #fff;
+    padding-top: 40px;
+}
+
+#countdown .countdown-datum-text{
+    color: #fff;
+    font-size: 2.2em;
+    text-shadow: 2px 2px #000;
+    font-weight: bold;
+}
+
+#countdown .countdown-datum-datum{
+    color: #fff;
+    font-size: 1.2em;
+    text-shadow: 2px 2px #000;
+    margin-top: 10px;
+}
+
 #countdown .countdown-body {
     color: #fff;
     display: inline-block;
-    padding-bottom: 30px;
     text-align: left;
-    margin: 0 auto;
-    width: 100%;
-    vertical-align: central;
+    width: 50%;
+    height: 50%;
+    margin-top: 3%;
+    alignment-baseline: middle;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+    padding-top: 3%;
 }
 
 #countdown .countdown-body .number-container {
-    width: 14%;
     float: left;
+    margin-left: 5%;
+    text-align: center;
+    text-shadow: 2px 2px #000;
 }
 
 #countdown .countdown-body .number-container .number{
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    color: black;
+    width: 100px;
+    height: 100px;
+    color: #fff;
     line-height: 80px;
     vertical-align: middle;
-    text-align: center;
     font-weight: bold;
-    font-size: xx-large;
+    font-size: 4.2em;
+    margin-bottom: 5%;
 }
 /*# sourceMappingURL=bootstrap.css.map */
