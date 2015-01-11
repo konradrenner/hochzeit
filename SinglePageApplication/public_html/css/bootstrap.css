@@ -5848,4 +5848,13 @@ button.close {
     font-size: 360%;
     margin-bottom: 5%;
 }
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.fadeInLeft {
+    animation-name: fadeInLeft;
+}
 /*# sourceMappingURL=bootstrap.css.map */
