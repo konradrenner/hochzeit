@@ -5831,7 +5831,7 @@ button.close {
     alignment-baseline: middle;
     border-bottom: 2px solid white;
     border-top: 2px solid white;
-    padding-top: 3%;
+    padding-top: 4%;
 }
 
 #countdown .countdown-body .number-container {
@@ -5842,13 +5842,10 @@ button.close {
 }
 
 #countdown .countdown-body .number-container .number{
-    width: 100px;
-    height: 100px;
     color: #fff;
-    line-height: 80px;
     vertical-align: middle;
     font-weight: bold;
-    font-size: 4.2em;
+    font-size: 360%;
     margin-bottom: 5%;
 }
 /*# sourceMappingURL=bootstrap.css.map */
