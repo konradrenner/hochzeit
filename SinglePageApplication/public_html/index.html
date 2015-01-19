@@ -29,10 +29,10 @@
           $("#home").load("sites/home.html"); 
         });
         $(function(){
-          $("#ablauf").load("sites/ablauf.html"); 
+          $("#ideen").load("sites/ideen.html"); 
         });
         $(function(){
-          $("#ideen").load("sites/ideen.html"); 
+          $("#ablauf").load("sites/ablauf.html"); 
         });
         $(function(){
           $("#kontakt").load("sites/kontakt.html"); 
@@ -43,6 +43,17 @@
         $(function(){
           $("#galerie").load("sites/galerie.html"); 
         });
+        
+        function isScrolledIntoView(elem)
+        {
+            var docViewTop = $(window).scrollTop();
+            var docViewBottom = docViewTop + $(window).height();
+
+            var elemTop = $(elem).offset().top;
+            var elemBottom = elemTop + $(elem).height();
+
+            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        }
         </script> 
     </head>
     <body>
@@ -59,8 +70,8 @@
             <span class="icon-bar"></span>
           </button>
             <a class="navbar-brand" href="#home">Home</a>
+            <a class="navbar-brand" href="#ideen">Brautpaar</a>
             <a class="navbar-brand" href="#ablauf">Ablauf</a>
-            <a class="navbar-brand" href="#ideen">Geschenkideen</a>
             <a class="navbar-brand" href="#kontakt">Kontakt</a>
             <a class="navbar-brand" href="#upload">Fotoupload</a>
             <a class="navbar-brand" href="#galerie">Galerie</a>
@@ -89,8 +100,16 @@
          });
     </script>
 
-    <div id="ablauf" class="jumbotron">
+    <div id="ideen" class="jumbotron">
     </div> 
+    <script>
+        $( window ).scroll(function() {
+            if(isScrolledIntoView($('#ideen'))){
+                $('#kerstin').animate({left:200, opacity: 1}, 1500);
+                $('#konrad').animate({right:200, opacity: 1}, 1500);
+            }
+        });
+    </script>
 
     <div id="countdown" class="container_countdown">
         <div class="countdown-datum">
@@ -130,7 +149,7 @@
             });
     </script>
 
-    <div id="ideen" class="container animated fadeInLeft">
+    <div id="ablauf" class="container">
     </div> 
 
     <div id="kontakt" class="jumbotron">
