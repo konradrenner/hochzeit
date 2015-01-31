@@ -5881,17 +5881,17 @@ button.close {
 }
 
 .box_home{
-    margin-top: 22%;
+    margin-top: 28%;
     alignment-adjust: middle;
     text-align: center;
     text-shadow: 2px 2px #808080;
     color: white;
-    font-size: 360%;
+    font-size: 290%;
     vertical-align: middle;
 }
 
 .untertitel{
-    font-size: 50%;
+    font-size: 40%;
 }
 
 .home_border{
@@ -5899,8 +5899,14 @@ button.close {
     border-top: 3px solid white;
     border-left: 3px solid white;
     border-right: 3px solid white;
-    padding: 0% 0% 0% 0%;
-    margin-left: 32%;
-    margin-right: 32%;
+    padding: 0.5% 0% 0% 0%;
+    margin-left: 38%;
+    margin-right: 38%;
+}
+
+.ueberschrift_brautpaar{
+    text-align: center;
+    font-size: 260%;
+    vertical-align: middle;
 }
 /*# sourceMappingURL=bootstrap.css.map */
