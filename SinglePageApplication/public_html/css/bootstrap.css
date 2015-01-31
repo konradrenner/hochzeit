@@ -4383,7 +4383,7 @@ a.list-group-item.active > .badge,
 .jumbotron_home {
     padding: 30px;
     color: inherit;
-    min-height: 800px;
+    min-height: 900px;
     margin: 0 auto;
 }
 .jumbotron_kontakt {
@@ -5878,5 +5878,29 @@ button.close {
 
 .brautpaar{
     text-align: center;
+}
+
+.box_home{
+    margin-top: 22%;
+    alignment-adjust: middle;
+    text-align: center;
+    text-shadow: 2px 2px #808080;
+    color: white;
+    font-size: 360%;
+    vertical-align: middle;
+}
+
+.untertitel{
+    font-size: 50%;
+}
+
+.home_border{
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    padding: 0% 0% 0% 0%;
+    margin-left: 32%;
+    margin-right: 32%;
 }
 /*# sourceMappingURL=bootstrap.css.map */
