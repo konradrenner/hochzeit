@@ -39,7 +39,7 @@ public class UploadBean implements Serializable {
             BufferedReader reader = new BufferedReader(new InputStreamReader(file.getInputStream()));
 
             StringBuilder sb = new StringBuilder();
-            String line = null;
+            String line;
             while ((line = reader.readLine()) != null) {
                 sb.append(line);
             }
