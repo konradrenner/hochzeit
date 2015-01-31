@@ -4386,6 +4386,13 @@ a.list-group-item.active > .badge,
     min-height: 800px;
     margin: 0 auto;
 }
+.jumbotron_kontakt {
+    padding: 0px;
+    color: inherit;
+    min-height: 400px;
+    margin: 0 auto;
+}
+
 .jumbotron h1,
 .jumbotron .h1 {
   color: inherit;
@@ -5860,5 +5867,16 @@ button.close {
 
 .durchsichtig{
     opacity: 0;
+}
+
+.portait_foto{
+    height: 180px;
+    width: 150px;
+    border: 10px solid #3c763d;
+    border-radius:50%;
+}
+
+.brautpaar{
+    text-align: center;
 }
 /*# sourceMappingURL=bootstrap.css.map */
