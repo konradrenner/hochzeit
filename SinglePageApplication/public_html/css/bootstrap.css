@@ -6,8 +6,8 @@
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
+    font-family: 'Oxygen', sans-serif;
+    -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 body {
@@ -273,8 +273,8 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 14px;
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
@@ -738,6 +738,10 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.class_footer {
+    text-align: center;
 }
 
 .container_countdown {
@@ -5895,6 +5899,10 @@ button.close {
 
 .untertitel{
     font-size: 40%;
+}
+
+.text_einleitung{
+    font-size: 50%;
 }
 
 .home_border{
