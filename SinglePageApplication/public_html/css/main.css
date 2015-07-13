@@ -5,18 +5,30 @@
    ========================================================================== */
 
 
+.abschnitt_hr_lang { 
+    display: block;
+    color: #87aa1e;
+    background-color: #87aa1e;
+    height: 2px;
+    margin-top: 0.5em;
+    margin-bottom: 0.0em;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-style: inset;
+}
 
+.abschnitt_hr_kurz { 
+    display: block;
+    color: #87aa1e;
+    background-color: #87aa1e;
+    height: 5px;
+    margin-top: 0.0em;
+    margin-bottom: 0.5em;
+    margin-left: 45%;
+    margin-right: 45%;
+    border-style: inset;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.scrolloff {
+    pointer-events: none;
+}
