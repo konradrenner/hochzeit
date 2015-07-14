@@ -4385,8 +4385,16 @@ a.list-group-item.active > .badge,
   padding: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #eee;
+  background-color: white;
 }
+
+.jumbotron_ablauf {
+    padding: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: white;
+}
+
 .jumbotron_home {
     padding: 30px;
     color: inherit;

@@ -32,3 +32,29 @@
 .scrolloff {
     pointer-events: none;
 }
+
+.ablauf_kasten{
+    background: #c8beb9;
+}
+
+.ablauf_rechtsbuendig{
+    text-align: right;
+    margin-left: 30%;
+}
+
+.ablauf_linksbuendig{
+    text-align: left;
+    margin-right: 30%;
+}
+
+.ablauf_h2{
+    padding-top: 5%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.ablauf_p{
+    padding-bottom: 3%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
