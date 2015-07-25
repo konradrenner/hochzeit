@@ -48,13 +48,27 @@
 }
 
 .ablauf_h2{
-    padding-top: 5%;
+    padding-top: 1%;
+    margin-top: 1%;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+.ablauf_p{
+    padding-bottom: 1%;
     padding-right: 3%;
     padding-left: 3%;
 }
 
-.ablauf_p{
-    padding-bottom: 3%;
-    padding-right: 3%;
-    padding-left: 3%;
+.ablauf_punkt_start{
+    padding-top: 23%;
+    padding-left: 40%;
+}
+
+.ablauf_punkt_zentrum{
+    padding-left: 40%;
+
+}
+
+.ablauf_punkt_ende{
+    padding-left: 40%;
 }
