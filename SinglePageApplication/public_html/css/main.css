@@ -71,3 +71,7 @@
 .ablauf_punkt_ende{
     padding-left: 40%;
 }
+
+.unsichtbar{
+    opacity: 0;
+}
