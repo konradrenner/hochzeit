@@ -745,8 +745,6 @@ pre code {
 }
 
 .container_countdown {
-    padding-right: 15px;
-    padding-left: 15px;
     height: 450px;
     background-image: url(../img/countdown/background.jpg);
     background-attachment: fixed;
@@ -5847,7 +5845,7 @@ button.close {
     color: #fff;
     display: inline-block;
     text-align: left;
-    width: 50%;
+    width: 30%;
     height: 50%;
     margin-top: 3%;
     alignment-baseline: middle;
