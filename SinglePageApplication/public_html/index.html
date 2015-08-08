@@ -166,18 +166,16 @@
             <div class="countdown-datum-datum">Es gibt einen Tag, da geht man Seite an Seite der Zukunft entgegen<br>und ein einfaches Ja verschönert das ganze Leben.</div>
         </div>
         <div class="countdown-body">
-            <div class="number-container"><div id="jahre" class="number">0</div><div class="text">Jahre</div></div>
-            <div class="number-container"><div id="monate" class="number">3</div> <div class="text">Monate</div></div>
-            <div class="number-container"><div id="tage" class="number">13</div> <div class="text">Tage</div></div>
-            <div class="number-container"><div id="stunden" class="number">01</div> <div class="text">Stunden</div></div>
-            <div class="number-container"><div id="minuten" class="number">47</div> <div class="text">Minuten</div></div>
-            <div class="number-container"><div id="sekunden" class="number">02</div> <div class="text">Sekunden</div></div>
+            <div class="countdown-innerbody">
+                <div class="number-container"><div id="monate" class="number">3</div> <div class="text">Monate</div></div>
+                <div class="number-container"><div id="tage" class="number">13</div> <div class="text">Tage</div></div>
+                <div class="number-container"><div id="stunden" class="number">01</div> <div class="text">Stunden</div></div>
+                <div class="number-container"><div id="minuten" class="number">47</div> <div class="text">Minuten</div></div>
+                <div class="number-container"><div id="sekunden" class="number">02</div> <div class="text">Sekunden</div></div>
+            </div>
         </div>
     </div>
     <script>
-            $('#jahre').countdown('2016/06/11 15:30:00', function (event) {
-                $(this).html(event.strftime('%Y'));
-            });
             $('#monate').countdown('2016/06/11 15:30:00', function (event) {
                 var jahre = event.strftime('%Y');
                 var monate = event.strftime('%m');

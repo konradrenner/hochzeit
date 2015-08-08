@@ -749,6 +749,7 @@ pre code {
     background-image: url(../img/countdown/background.jpg);
     background-attachment: fixed;
     display: block;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -5843,20 +5844,28 @@ button.close {
 
 #countdown .countdown-body {
     color: #fff;
-    display: inline-block;
-    text-align: left;
+    text-align: center;
     width: 30%;
     height: 50%;
     margin-top: 3%;
+    margin-left: 35%;
     alignment-baseline: middle;
+}
+
+#countdown .countdown-innerbody {
     border-bottom: 2px solid white;
     border-top: 2px solid white;
-    padding-top: 4%;
+    padding-top: 12%;
+    padding-bottom: 12%;
+    padding-left: 6%;
+    min-width: 100%;
+    display: inline-block;
 }
 
 #countdown .countdown-body .number-container {
     float: left;
-    margin-left: 5%;
+    padding-left: 3%;
+    padding-right: 3%;
     text-align: center;
     text-shadow: 2px 2px #000;
 }
@@ -5866,7 +5875,6 @@ button.close {
     vertical-align: middle;
     font-weight: bold;
     font-size: 360%;
-    margin-bottom: 5%;
 }
 
 .animated {
