@@ -37,21 +37,24 @@
     background: #c8beb9;
 }
 
-.ablauf-inner-row{
-    width: 100%;
-    height: 100%;
+.ablauf-inner-row-links{
+    width: 300px;
+    margin-left: 10%;
+}
+
+.ablauf-inner-row-rechts{
+    width: 300px;
+    margin-right: 10%;
 }
 
 .ablauf_rechtsbuendig{
     display: inline-block;
     text-align: right;
-    margin-left: 40%;
 }
 
 .ablauf_linksbuendig{
     display: inline-block;
     text-align: left;
-    margin-right: 30%;
 }
 
 .arrow-right {
