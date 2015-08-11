@@ -37,42 +37,44 @@
     background: #c8beb9;
 }
 
-.ablauf-inner-row-links{
-    width: 300px;
-    margin-left: 10%;
-}
-
-.ablauf-inner-row-rechts{
-    width: 300px;
-    margin-right: 10%;
-}
-
 .ablauf_rechtsbuendig{
-    display: inline-block;
     text-align: right;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    width: 300px;
 }
 
 .ablauf_linksbuendig{
-    display: inline-block;
     text-align: left;
+    z-index: 2;
+    position: absolute;
+    left: 30px;
+    width: 300px;
 }
 
 .arrow-right {
-    display: inline-block;
     width: 0; 
     height: 0; 
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-    border-left: 20px solid #c8beb9;
+    border-left: 30px solid #c8beb9;
+    z-index: 1;
+    position: absolute;
+    right: 0em;
+    top: 3em;
 }
 
 .arrow-left {
-    display: inline-block;
     width: 0; 
     height: 0; 
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent; 
-    border-right:20px solid #c8beb9; 
+    border-right:30px solid #c8beb9; 
+    z-index: 1;
+    position: absolute;
+    left: 0em;
+    top: 3em;
 }
 
 .ablauf_h2{
