@@ -36,7 +36,7 @@
           $("#ablauf").load("sites/ablauf.html"); 
         });
         $(function(){
-          $("#kontakt").load("sites/kontakt.html"); 
+          $("#route").load("sites/kontakt.html"); 
         });
         $(function(){
           $("#upload").load("sites/upload.html"); 
@@ -76,7 +76,7 @@
                   <li><a id="home_item" class="navtext_selected" href="#home">HOME</a></li>
                   <li><a id="brautpaar_item" class="navtext" href="#ideen">BRAUTPAAR</a></li>
                   <li><a id="ablauf_item" class="navtext" href="#ablauf_ueberschrift">ABLAUF</a></li>
-                  <li><a id="route_item" class="navtext" href="#kontakt">ROUTE</a></li>
+                  <li><a id="route_item" class="navtext" href="#route">ROUTE</a></li>
                   <li><a id="galerie_item" class="navtext" href="#galerie">GALERIE</a></li>
                   <li><a id="upload_item" class="navtext" href="#upload">FOTOUPLOAD</a></li>
               </ul> <!-- END .cl-effect-3, .nav, .nav-justified -->
@@ -118,7 +118,7 @@
             });
         
             $( window ).scroll(function() {
-                if(isScrolledIntoView($('#kontakt'))){
+                if(isScrolledIntoView($('#route'))){
                     resetNavUnderline();
                     $('#route_item').addClass( 'navtext_selected' );
                 }
@@ -208,7 +208,7 @@
     <div id="ablauf" class="container">
     </div> 
 
-    <div id="kontakt" class="jumbotron_kontakt">
+    <div id="route" class="jumbotron_kontakt">
     </div>
 
     <div id="galerie" class="container">
