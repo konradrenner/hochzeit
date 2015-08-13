@@ -105,3 +105,14 @@
 .unsichtbar{
     opacity: 0;
 }
+
+.leerzeile_route{
+    padding: 5px;
+    color: inherit;
+    background-color: white;
+}
+
+.leerzeile_ablauf{
+    color: inherit;
+    background-color: white;
+}

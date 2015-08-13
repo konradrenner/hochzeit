@@ -33,10 +33,10 @@
           $("#ideen").load("sites/ideen.html"); 
         });
         $(function(){
-          $("#ablauf").load("sites/ablauf.html"); 
+          $("#ablauf_daten").load("sites/ablauf.html"); 
         });
         $(function(){
-          $("#route").load("sites/kontakt.html"); 
+          $("#route_daten").load("sites/kontakt.html"); 
         });
         $(function(){
           $("#upload").load("sites/upload.html"); 
@@ -75,7 +75,7 @@
               <ul class="cl-effect-3 nav nav-justified" id="cl-effect-3">
                   <li><a id="home_item" class="navtext_selected" href="#home">HOME</a></li>
                   <li><a id="brautpaar_item" class="navtext" href="#ideen">BRAUTPAAR</a></li>
-                  <li><a id="ablauf_item" class="navtext" href="#ablauf_ueberschrift">ABLAUF</a></li>
+                  <li><a id="ablauf_item" class="navtext" href="#ablauf">ABLAUF</a></li>
                   <li><a id="route_item" class="navtext" href="#route">ROUTE</a></li>
                   <li><a id="galerie_item" class="navtext" href="#galerie">GALERIE</a></li>
                   <li><a id="upload_item" class="navtext" href="#upload">FOTOUPLOAD</a></li>
@@ -118,7 +118,7 @@
             });
         
             $( window ).scroll(function() {
-                if(isScrolledIntoView($('#route'))){
+                if(isScrolledIntoView($('#route_daten'))){
                     resetNavUnderline();
                     $('#route_item').addClass( 'navtext_selected' );
                 }
@@ -196,6 +196,10 @@
             });
     </script>
 
+    <div id="ablauf" class="leerzeile_ablauf">
+        &nbsp;
+    </div>
+
     <div id="ablauf_ueberschrift" class="jumbotron_ablauf">
         <div class="row brautpaar">
             <hr class="abschnitt_hr_lang" >
@@ -205,10 +209,14 @@
     </div> 
     <script src="js/ablauf.js"></script>    
 
-    <div id="ablauf" class="container">
+    <div id="ablauf_daten" class="container">
     </div> 
 
-    <div id="route" class="jumbotron_kontakt">
+    <div id="route" class="leerzeile_route">
+        &nbsp;
+    </div>
+
+    <div id="route_daten" class="jumbotron_kontakt">
     </div>
 
     <div id="galerie" class="container">
