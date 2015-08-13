@@ -4401,7 +4401,7 @@ a.list-group-item.active > .badge,
     margin: 0 auto;
 }
 .jumbotron_kontakt {
-    padding: 0px;
+    padding: 1%;
     color: inherit;
     min-height: 400px;
     margin: 0 auto;
