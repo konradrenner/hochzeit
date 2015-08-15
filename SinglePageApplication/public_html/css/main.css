@@ -68,6 +68,13 @@
     background: #c8beb9;
 }
 
+.ablauf_mobile{
+    text-align: center;
+    width: 100%;
+    padding-left: 10%;
+    margin-bottom: 10%;
+}
+
 .ablauf_rechtsbuendig{
     text-align: right;
     z-index: 2;

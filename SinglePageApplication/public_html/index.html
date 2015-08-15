@@ -33,7 +33,11 @@
           $("#brautpaar").load("sites/brautpaar.html"); 
         });
         $(function(){
-          $("#ablauf_daten").load("sites/ablauf.html"); 
+            if(window.screen.availWidth >= 800){
+                $("#ablauf_daten").load("sites/ablauf.html"); 
+            }else{
+                $("#ablauf_daten").load("sites/ablauf_mobile.html"); 
+            }
         });
         $(function(){
           $("#route_daten").load("sites/kontakt.html"); 
