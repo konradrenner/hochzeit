@@ -43,10 +43,7 @@
           $("#route_daten").load("sites/kontakt.html"); 
         });
         $(function(){
-          $("#upload").load("sites/upload.html"); 
-        });
-        $(function(){
-          $("#galerie").load("sites/galerie.html"); 
+          $("#unterkuenfte_daten").load("sites/unterkuenfte.html"); 
         });
         
         function isScrolledIntoView(elem)
@@ -81,8 +78,7 @@
                   <li><a id="brautpaar_item" class="navtext" href="#brautpaar">BRAUTPAAR</a></li>
                   <li><a id="ablauf_item" class="navtext" href="#ablauf">ABLAUF</a></li>
                   <li><a id="route_item" class="navtext" href="#route">ROUTE</a></li>
-                  <li><a id="galerie_item" class="navtext" href="#galerie">GALERIE</a></li>
-                  <li><a id="upload_item" class="navtext" href="#upload">FOTOUPLOAD</a></li>
+                  <li><a id="unterkuenfte_item" class="navtext" href="#unterkuenfte">UNTERKÜNFTE</a></li>
               </ul> <!-- END .cl-effect-3, .nav, .nav-justified -->
           </div>
 
@@ -96,7 +92,7 @@
             $('#brautpaar_item').removeClass( 'navtext_selected' );
             $('#ablauf_item').removeClass( 'navtext_selected' );
             $('#route_item').removeClass( 'navtext_selected' );
-            $('#galerie_item').removeClass( 'navtext_selected' );
+            $('#unterkuenfte_item').removeClass( 'navtext_selected' );
             $('#upload_item').removeClass( 'navtext_selected' );
         }
         
@@ -129,16 +125,9 @@
             });
         
             $( window ).scroll(function() {
-                if(isScrolledIntoView($('#galerie'))){
+                if(isScrolledIntoView($('#unterkuenfte_daten'))){
                     resetNavUnderline();
-                    $('#galerie_item').addClass( 'navtext_selected' );
-                }
-            });
-        
-            $( window ).scroll(function() {
-                if(isScrolledIntoView($('#upload'))){
-                    resetNavUnderline();
-                    $('#upload_item').addClass( 'navtext_selected' );
+                    $('#unterkuenfte_item').addClass( 'navtext_selected' );
                 }
             });
     </script>
@@ -232,7 +221,7 @@
         <div class="row brautpaar">
             <hr class="abschnitt_hr_lang" >
             <hr class="abschnitt_hr_kurz" >
-            <div class="ueberschrift_brautpaar">DER ABLAUF</div>
+            <div class="ueberschrift_brautpaar">ABLAUF</div>
         </div>
     </div> 
     <script src="js/ablauf.js"></script>    
@@ -247,11 +236,15 @@
     <div id="route_daten" class="jumbotron_kontakt">
     </div>
 
-    <div id="galerie" class="container">
-    </div>
-
-    <div id="upload" class="container">
+    <div id="unterkuenfte" class="jumbotron">
+        <div class="row brautpaar">
+            <hr class="abschnitt_hr_lang" >
+            <hr class="abschnitt_hr_kurz" >
+            <div class="ueberschrift_brautpaar">UNTERKÜNFTE</div>
+        </div>
     </div> 
+    <div id="unterkuenfte_daten" class="container">
+    </div>
 
     <hr>
     <div>
