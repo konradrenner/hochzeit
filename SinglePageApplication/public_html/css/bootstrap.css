@@ -5935,7 +5935,7 @@ button.close {
         color: #fff;
         vertical-align: middle;
         font-weight: bold;
-        font-size: 180%;
+        font-size: 200%;
     }
 }
 
@@ -5950,6 +5950,20 @@ button.close {
 
 .durchsichtig{
     opacity: 0;
+}
+
+@media (max-width: 799px){
+    .durchsichtig_brautpaar{
+        opacity: 1;
+        margin-left: 0%;
+        padding-left: 0%;
+    }
+}
+
+@media (min-width: 800px){
+    .durchsichtig_brautpaar{
+        opacity: 0;
+    }
 }
 
 .portait_foto{

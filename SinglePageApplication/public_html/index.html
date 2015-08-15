@@ -154,11 +154,10 @@
     <script>
         $( window ).scroll(function() {
             if(isScrolledIntoView($('#brautpaar'))){
-                if(window.screen.availWidth ){
-                    
+                if(window.screen.availWidth >= 800){
+                    $('#kerstin').animate({left:150, opacity: 1}, 1500);
+                    $('#konrad').animate({right:150, opacity: 1}, 1500);
                 }
-                $('#kerstin').animate({left:150, opacity: 1}, 1500);
-                $('#konrad').animate({right:150, opacity: 1}, 1500);
             }
         });
     </script>
