@@ -177,13 +177,35 @@
     </div>
     <script>
             $('#monate').countdown('2016/06/11 15:30:00', function (event) {
-                var jahre = event.strftime('%Y');
                 var monate = event.strftime('%m');
-                monate = monate - jahre*12;
-                $(this).html(monate);
+                
+                var tagDesMonats = new Date().getDate();
+                if(tagDesMonats > 11){
+                    monate = monate - 1;
+                }
+                
+                $(this).html("0"+monate);
             });
             $('#tage').countdown('2016/06/11 15:30:00', function (event) {
-                $(this).html(event.strftime('%d'));
+                
+                var aktDate = new Date();
+                var tageDesMonats = new Date(aktDate.getFullYear(),aktDate.getMonth()+1,0).getDate();
+                var tagDesMonats = aktDate.getDate();
+                
+                var differenz = tageDesMonats - tagDesMonats;
+                
+                var korrekteTage;
+                if(tagDesMonats <= 11){
+                    korrekteTage = 11 - tagDesMonats;
+                    
+                    if(korrekteTage < 10){
+                        korrekteTage = "0"+korrekteTage;
+                    }
+                }else{
+                    korrekteTage = differenz + 11;
+                }
+                
+                $(this).html(korrekteTage);
             });
             $('#stunden').countdown('2016/06/11 15:30:00', function (event) {
                 $(this).html(event.strftime('%H'));
