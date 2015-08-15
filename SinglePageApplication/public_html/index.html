@@ -30,7 +30,7 @@
           $("#home").load("sites/home.html"); 
         });
         $(function(){
-          $("#ideen").load("sites/ideen.html"); 
+          $("#brautpaar").load("sites/brautpaar.html"); 
         });
         $(function(){
           $("#ablauf_daten").load("sites/ablauf.html"); 
@@ -74,7 +74,7 @@
           <div class="collapse navbar-collapse" id="collapse">
               <ul class="cl-effect-3 nav nav-justified" id="cl-effect-3">
                   <li><a id="home_item" class="navtext_selected" href="#home">HOME</a></li>
-                  <li><a id="brautpaar_item" class="navtext" href="#ideen">BRAUTPAAR</a></li>
+                  <li><a id="brautpaar_item" class="navtext" href="#brautpaar">BRAUTPAAR</a></li>
                   <li><a id="ablauf_item" class="navtext" href="#ablauf">ABLAUF</a></li>
                   <li><a id="route_item" class="navtext" href="#route">ROUTE</a></li>
                   <li><a id="galerie_item" class="navtext" href="#galerie">GALERIE</a></li>
@@ -104,7 +104,7 @@
             });
         
             $( window ).scroll(function() {
-                if(isScrolledIntoView($('#ideen'))){
+                if(isScrolledIntoView($('#brautpaar'))){
                     resetNavUnderline();
                     $('#brautpaar_item').addClass( 'navtext_selected' );
                 }
@@ -149,11 +149,11 @@
          });
     </script>
 
-    <div id="ideen" class="jumbotron">
+    <div id="brautpaar" class="jumbotron">
     </div> 
     <script>
         $( window ).scroll(function() {
-            if(isScrolledIntoView($('#ideen'))){
+            if(isScrolledIntoView($('#brautpaar'))){
                 $('#kerstin').animate({left:200, opacity: 1}, 1500);
                 $('#konrad').animate({right:200, opacity: 1}, 1500);
             }
