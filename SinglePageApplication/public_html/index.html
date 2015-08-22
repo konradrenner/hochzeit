@@ -22,12 +22,17 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/main.js"></script>
         <script src="js/vendor/jquery-1.11.0.js"></script> 
         <script src="js/vendor/bgswitcher/jquery.bgswitcher.js"></script>
         <script src="js/vendor/countdown/jquery.countdown.min.js"></script>
         <script> 
         $(function(){
-          $("#home").load("sites/home.html"); 
+          if(window.screen.availWidth >= 800){
+               $("#home").load("sites/home.html"); 
+            }else{
+               $("#home").load("sites/home_mobil.html"); 
+            }
         });
         $(function(){
           $("#brautpaar").load("sites/brautpaar.html"); 
@@ -74,11 +79,11 @@
           </div>
           <div class="collapse navbar-collapse" id="collapse">
               <ul class="cl-effect-3 nav nav-justified" id="cl-effect-3">
-                  <li><a id="home_item" class="navtext_selected" href="#home">HOME</a></li>
-                  <li><a id="brautpaar_item" class="navtext" href="#brautpaar">BRAUTPAAR</a></li>
-                  <li><a id="ablauf_item" class="navtext" href="#ablauf">ABLAUF</a></li>
-                  <li><a id="route_item" class="navtext" href="#route">ROUTE</a></li>
-                  <li><a id="unterkuenfte_item" class="navtext" href="#unterkuenfte">UNTERKÜNFTE</a></li>
+                  <li><a id="home_item" class="navtext_selected" href="#home" onclick="selectHome()">HOME</a></li>
+                  <li><a id="brautpaar_item" class="navtext" href="#brautpaar" onclick="selectBrautpaar()">BRAUTPAAR</a></li>
+                  <li><a id="ablauf_item" class="navtext" href="#ablauf" onclick="selectAblauf()">ABLAUF</a></li>
+                  <li><a id="route_item" class="navtext" href="#route" onclick="selectRoute()">ROUTE</a></li>
+                  <li><a id="unterkuenfte_item" class="navtext" href="#unterkuenfte" onclick="selectUnterkuenfte()">UNTERKÜNFTE</a></li>
               </ul> <!-- END .cl-effect-3, .nav, .nav-justified -->
           </div>
 
@@ -87,49 +92,23 @@
       </div>
     </div>
     <script>
-        function resetNavUnderline(){
-            $('#home_item').removeClass( 'navtext_selected' );
-            $('#brautpaar_item').removeClass( 'navtext_selected' );
-            $('#ablauf_item').removeClass( 'navtext_selected' );
-            $('#route_item').removeClass( 'navtext_selected' );
-            $('#unterkuenfte_item').removeClass( 'navtext_selected' );
-            $('#upload_item').removeClass( 'navtext_selected' );
-        }
-        
         $( window ).scroll(function() {
-            if(isScrolledIntoView($('#home'))){
-                resetNavUnderline();
-                $('#home_item').addClass( 'navtext_selected' );
+            if(isScrolledIntoView($('#brautpaar')) || isScrolledIntoView($('#countdown'))){
+                selectBrautpaar();
+            }else if(isScrolledIntoView($('#ablauf_ueberschrift')) || isScrolledIntoView($('#ablauf_daten'))){
+                selectAblauf();
+            }else if(isScrolledIntoView($('#route_daten'))){
+                selectRoute();
+            }else if(isScrolledIntoView($('#unterkuenfte_daten')) || isScrolledIntoView($('#fusszeile'))){
+                selectUnterkuenfte();
+            }else{
+                var docViewTop = $(window).scrollTop();
+                if(docViewTop < 200){
+                    selectHome();
+                }
             }
-            });
+         });
         
-            $( window ).scroll(function() {
-                if(isScrolledIntoView($('#brautpaar'))){
-                    resetNavUnderline();
-                    $('#brautpaar_item').addClass( 'navtext_selected' );
-                }
-            });
-        
-            $( window ).scroll(function() {
-                if(isScrolledIntoView($('#ablauf_ueberschrift'))){
-                    resetNavUnderline();
-                    $('#ablauf_item').addClass( 'navtext_selected' );
-                }
-            });
-        
-            $( window ).scroll(function() {
-                if(isScrolledIntoView($('#route_daten'))){
-                    resetNavUnderline();
-                    $('#route_item').addClass( 'navtext_selected' );
-                }
-            });
-        
-            $( window ).scroll(function() {
-                if(isScrolledIntoView($('#unterkuenfte_daten'))){
-                    resetNavUnderline();
-                    $('#unterkuenfte_item').addClass( 'navtext_selected' );
-                }
-            });
     </script>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -247,7 +226,7 @@
     </div>
 
     <hr>
-    <div>
+    <div id="fusszeile">
         <footer class="class_footer">
             <!--  <p>&copy; K&K 2008 bis an ihr Lebensende</p> -->
             <p>Made with love, from K-UND-K</p>
