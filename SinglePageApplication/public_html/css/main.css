@@ -190,8 +190,29 @@
     font-size: 1.2em;
     text-shadow: 2px 2px #000;
     text-align: center;
-    padding-top: 10%;
     padding-left: 5%;
     padding-right: 5%;
     font-weight: bold;
+}
+
+@media (max-width: 499px){
+    #geschenke_daten .geschenke-text-ueberschrift{
+        color: #fff;
+        font-size: 2.2em;
+        text-shadow: 2px 2px #000;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 15%;
+    }
+}
+
+@media (min-width: 500px){
+    #geschenke_daten .geschenke-text-ueberschrift{
+        color: #fff;
+        font-size: 2.2em;
+        text-shadow: 2px 2px #000;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 8%;
+    }
 }
