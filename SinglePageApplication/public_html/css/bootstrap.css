@@ -748,6 +748,7 @@ pre code {
     height: 450px;
     background-image: url(../img/countdown/background.jpg);
     background-attachment: fixed;
+    background-position: center;
     display: block;
     width: 100%;
 }
@@ -4394,12 +4395,6 @@ a.list-group-item.active > .badge,
     background-color: white;
 }
 
-.jumbotron_home {
-    padding: 30px;
-    color: inherit;
-    min-height: 900px;
-    margin: 0 auto;
-}
 .jumbotron_kontakt {
     padding: 1%;
     color: inherit;
@@ -5842,7 +5837,7 @@ button.close {
     margin-top: 10px;
 }
 
-@media (min-width: 800px){
+@media (min-width: 1001px){
     #countdown .countdown-body {
         color: #fff;
         text-align: center;
@@ -5854,7 +5849,31 @@ button.close {
     }
 }
 
-@media (max-width: 799px){
+@media (min-width: 800px) and (max-width: 1000px){
+    #countdown .countdown-body {
+        color: #fff;
+        text-align: center;
+        width: 50%;
+        height: 60%;
+        margin-top: 3%;
+        margin-left: 25%;
+        alignment-baseline: middle;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 799px){
+    #countdown .countdown-body {
+        color: #fff;
+        text-align: center;
+        width: 60%;
+        height: 60%;
+        margin-left: 20%;
+        margin-top: 12%;
+        alignment-baseline: middle;
+    }
+}
+
+@media (max-width: 599px){
     #countdown .countdown-body {
         color: #fff;
         text-align: center;
@@ -5965,6 +5984,25 @@ button.close {
         opacity: 0;
     }
 }
+@media (max-height: 750px){
+    .jumbotron_home {
+        padding: 30px;
+        color: inherit;
+        height: 800px;
+        margin: 0 auto;
+        background-position: center;
+    }
+}
+
+@media (min-height: 751px){
+    .jumbotron_home {
+        padding: 30px;
+        color: inherit;
+        min-height: 900px;
+        margin: 0 auto;
+        background-position: center;
+    }
+}
 
 .portait_foto{
     height: 300px;
@@ -5975,14 +6013,40 @@ button.close {
     text-align: center;
 }
 
-.box_home{
-    margin-top: 23%;
-    alignment-adjust: middle;
-    text-align: center;
-    text-shadow: 2px 2px #808080;
-    color: white;
-    font-size: 290%;
-    vertical-align: middle;
+@media (max-width: 799px) and (min-height: 465px){
+    .box_home{
+        margin-top: 70%;
+        alignment-adjust: middle;
+        text-align: center;
+        text-shadow: 2px 2px #808080;
+        color: white;
+        font-size: 290%;
+        vertical-align: middle;
+    }
+}
+
+@media (max-width: 799px) and (max-height: 464px){
+    .box_home{
+        margin-top: 23%;
+        alignment-adjust: middle;
+        text-align: center;
+        text-shadow: 2px 2px #808080;
+        color: white;
+        font-size: 290%;
+        vertical-align: middle;
+    }
+}
+
+@media (min-width: 800px){
+    .box_home{
+        margin-top: 23%;
+        alignment-adjust: middle;
+        text-align: center;
+        text-shadow: 2px 2px #808080;
+        color: white;
+        font-size: 290%;
+        vertical-align: middle;
+    }
 }
 
 .untertitel{

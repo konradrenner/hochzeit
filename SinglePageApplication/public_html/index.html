@@ -116,7 +116,7 @@
     </div>
     <script>
          $("#home").bgswitcher({
-            images: ["img/home/image_1.jpg", "img/home/image_2.jpg", "img/home/image_3.jpg", "img/home/image_4.jpg"], // Background images
+            images: ["img/home/image_1.jpg", "img/home/image_2.jpg", "img/home/image_3.jpg", "img/home/image_4.jpg", "img/home/image_5.jpg"], // Background images
             effect: "fade" // fade, blind, clip, slide, drop, hide
          });
     </script>
@@ -158,7 +158,11 @@
                     monate = monate - 1;
                 }
                 
-                $(this).html("0"+monate);
+                if(monate.length < 2){
+                    monate = "0" + monate;
+                }
+                
+                $(this).html(monate);
             });
             $('#tage').countdown('2016/06/11 15:30:00', function (event) {
                 
