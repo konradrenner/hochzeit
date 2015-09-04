@@ -5988,7 +5988,7 @@ button.close {
     .jumbotron_home {
         padding: 30px;
         color: inherit;
-        height: 800px;
+        height: 700px;
         margin: 0 auto;
         background-position: center;
     }
@@ -6013,7 +6013,8 @@ button.close {
     text-align: center;
 }
 
-@media (max-width: 799px) and (min-height: 465px){
+
+@media (max-width: 450px) and (min-height: 465px){
     .box_home{
         margin-top: 70%;
         alignment-adjust: middle;
@@ -6027,7 +6028,7 @@ button.close {
 
 @media (max-width: 799px) and (max-height: 464px){
     .box_home{
-        margin-top: 23%;
+        margin-top: 30%;
         alignment-adjust: middle;
         text-align: center;
         text-shadow: 2px 2px #808080;
