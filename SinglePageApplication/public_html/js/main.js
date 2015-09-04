@@ -23,11 +23,17 @@ function selectUnterkuenfte(){
     $('#unterkuenfte_item').addClass( 'navtext_selected' );
 }
 
+function selectGeschenke() {
+    resetNavUnderline();
+    $('#geschenke_item').addClass('navtext_selected');
+}
+
 function resetNavUnderline(){
     $('#home_item').removeClass( 'navtext_selected' );
     $('#brautpaar_item').removeClass( 'navtext_selected' );
     $('#ablauf_item').removeClass( 'navtext_selected' );
     $('#route_item').removeClass( 'navtext_selected' );
     $('#unterkuenfte_item').removeClass( 'navtext_selected' );
-    $('#upload_item').removeClass( 'navtext_selected' );
+    $('#upload_item').removeClass('navtext_selected');
+    $('#geschenke_item').removeClass('navtext_selected');
 }
