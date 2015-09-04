@@ -187,9 +187,11 @@
 
 #geschenke_daten .geschenke-text{
     color: #fff;
-    font-size: 2.2em;
+    font-size: 1.2em;
     text-shadow: 2px 2px #000;
     text-align: center;
-    padding-top: 15%;
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     font-weight: bold;
 }
