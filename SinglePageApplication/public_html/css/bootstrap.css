@@ -746,7 +746,7 @@ pre code {
 
 .container_countdown {
     height: 450px;
-    background-image: url(../img/countdown/background.jpg);
+    background-image: url(background.jpg);
     background-attachment: fixed;
     background-position: center;
     display: block;
