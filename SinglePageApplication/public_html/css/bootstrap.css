@@ -744,13 +744,25 @@ pre code {
     text-align: center;
 }
 
-.container_countdown {
-    height: 450px;
-    background-image: url(background_neu.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    display: block;
-    width: 100%;
+@media (min-width: 800px) {
+    .container_countdown {
+        height: 450px;
+        background-image: url(background_neu.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 799px) {
+    .container_countdown {
+        height: 450px;
+        background-image: url(background_neu.jpg);
+        background-position: center;
+        display: block;
+        width: 100%;
+    }
 }
 
 @media (min-width: 768px) {

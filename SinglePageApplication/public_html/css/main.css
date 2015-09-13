@@ -176,13 +176,25 @@
     width: 200px;
 }
 
-.container_geschenke {
-    height: 450px;
-    background-image: url(background_geschenke.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    display: block;
-    width: 100%;
+@media (min-width: 800px) {
+    .container_geschenke {
+        height: 450px;
+        background-image: url(background_geschenke.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 799px) {
+    .container_geschenke {
+        height: 450px;
+        background-image: url(background_geschenke.jpg);
+        background-position: center;
+        display: block;
+        width: 100%;
+    }
 }
 
 #geschenke_daten .geschenke-text{
