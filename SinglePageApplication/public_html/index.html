@@ -114,6 +114,11 @@
             }
          });
         
+        $(document).on('click','.navbar-collapse.in',function(e) {
+            if( $(e.target).is('a') ) {
+                $(this).collapse('hide');
+            }
+        });
     </script>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->

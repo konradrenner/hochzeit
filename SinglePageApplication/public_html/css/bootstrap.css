@@ -4395,11 +4395,22 @@ a.list-group-item.active > .badge,
     background-color: white;
 }
 
-.jumbotron_kontakt {
-    padding: 1%;
-    color: inherit;
-    min-height: 400px;
-    margin: 0 auto;
+@media screen and (max-width: 767px) {
+    .jumbotron_kontakt {
+        padding: 5%;
+        color: inherit;
+        min-height: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron_kontakt {
+        padding: 1%;
+        color: inherit;
+        min-height: 400px;
+        margin: 0 auto;
+    }
 }
 
 .jumbotron h1,
