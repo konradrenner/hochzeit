@@ -40,7 +40,7 @@
           $("#brautpaar").load("brautpaar.html"); 
         });
         $(function(){
-            if(window.screen.availWidth >= 800){
+            if(window.screen.availWidth >= 1025){
                 $("#ablauf_daten").load("ablauf.html"); 
             }else{
                 $("#ablauf_daten").load("ablauf_mobile.html"); 
@@ -143,7 +143,7 @@
     <script>
         $( window ).scroll(function() {
             if(isScrolledIntoView($('#brautpaar'))){
-                if(window.screen.availWidth >= 800){
+                if(window.screen.availWidth >= 1026){
                     $('#kerstin').animate({left:150, opacity: 1}, 1500);
                     $('#konrad').animate({right:150, opacity: 1}, 1500);
                 }

@@ -5996,7 +5996,7 @@ button.close {
     opacity: 0;
 }
 
-@media (max-width: 799px){
+@media (max-width: 1025px){
     .durchsichtig_brautpaar{
         opacity: 1;
         margin-left: 0%;
@@ -6004,7 +6004,7 @@ button.close {
     }
 }
 
-@media (min-width: 950px){
+@media (min-width: 1026px){
     .durchsichtig_brautpaar{
         opacity: 0;
     }
