@@ -181,7 +181,7 @@
         height: 450px;
         background-image: url(background_geschenke.jpg);
         background-attachment: fixed;
-        background-position: center;
+        background-position: center bottom;
         display: block;
         width: 100%;
     }
