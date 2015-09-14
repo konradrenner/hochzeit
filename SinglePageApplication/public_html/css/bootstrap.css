@@ -6016,7 +6016,7 @@ button.close {
         height: 700px;
         margin: 0 auto;
         background-position: center;
-        background-size: 100% auto;
+        background-size: 99% auto;
         background-repeat: no-repeat;
     }
 }
