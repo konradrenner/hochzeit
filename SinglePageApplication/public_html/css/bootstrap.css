@@ -6004,28 +6004,38 @@ button.close {
     }
 }
 
-@media (min-width: 800px){
+@media (min-width: 950px){
     .durchsichtig_brautpaar{
         opacity: 0;
     }
 }
-@media (max-height: 750px){
+@media (max-height: 770px){
     .jumbotron_home {
         padding: 30px;
         color: inherit;
         height: 700px;
         margin: 0 auto;
-        background-position: center;
+        background-position: center top;
     }
 }
 
-@media (min-height: 751px){
+@media (min-height: 751px) and (max-width: 799px){
+    .jumbotron_home {
+        padding: 30px;
+        color: inherit;
+        min-height: 700px;
+        margin: 0 auto;
+        background-position: center top;
+    }
+}
+
+@media (min-height: 751px) and (min-width: 800px){
     .jumbotron_home {
         padding: 30px;
         color: inherit;
         min-height: 900px;
         margin: 0 auto;
-        background-position: center;
+        background-position: center top;
         background-size: 100% auto;
         background-repeat: no-repeat;
     }
