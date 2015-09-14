@@ -6015,11 +6015,11 @@ button.close {
         color: inherit;
         height: 700px;
         margin: 0 auto;
-        background-position: center top;
+        background-position: center;
     }
 }
 
-@media (min-height: 751px) and (max-width: 799px){
+@media (min-height: 771px) and (max-width: 799px){
     .jumbotron_home {
         padding: 30px;
         color: inherit;
@@ -6029,7 +6029,7 @@ button.close {
     }
 }
 
-@media (min-height: 751px) and (min-width: 800px){
+@media (min-height: 771px) and (min-width: 800px){
     .jumbotron_home {
         padding: 30px;
         color: inherit;
