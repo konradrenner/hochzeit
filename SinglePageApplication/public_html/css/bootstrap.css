@@ -750,6 +750,8 @@ pre code {
         background-image: url(background_neu.jpg);
         background-attachment: fixed;
         background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
         display: block;
         width: 100%;
     }
@@ -6014,6 +6016,8 @@ button.close {
         height: 700px;
         margin: 0 auto;
         background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
     }
 }
 
@@ -6024,6 +6028,8 @@ button.close {
         min-height: 900px;
         margin: 0 auto;
         background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
     }
 }
 
