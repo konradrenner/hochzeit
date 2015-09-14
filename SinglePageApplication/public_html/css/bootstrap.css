@@ -744,7 +744,7 @@ pre code {
     text-align: center;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1026px) {
     .container_countdown {
         height: 450px;
         background-image: url(background_neu.jpg);
@@ -757,7 +757,7 @@ pre code {
     }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 1025px) {
     .container_countdown {
         height: 450px;
         background-image: url(background_neu.jpg);
