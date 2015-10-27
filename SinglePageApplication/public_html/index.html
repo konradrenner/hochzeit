@@ -167,7 +167,7 @@
         </div>
     </div>
     <script>
-            $('#monate').countdown('2016/06/11 15:30:00', function (event) {
+            $('#monate').countdown('2016/06/11 16:00:00', function (event) {
                 var monate = event.strftime('%m');
                 
                 var tagDesMonats = new Date().getDate();
@@ -181,7 +181,7 @@
                 
                 $(this).html(monate);
             });
-            $('#tage').countdown('2016/06/11 15:30:00', function (event) {
+            $('#tage').countdown('2016/06/11 16:00:00', function (event) {
                 
                 var aktDate = new Date();
                 var tageDesMonats = new Date(aktDate.getFullYear(),aktDate.getMonth()+1,0).getDate();
@@ -202,13 +202,13 @@
                 
                 $(this).html(korrekteTage);
             });
-            $('#stunden').countdown('2016/06/11 15:30:00', function (event) {
+            $('#stunden').countdown('2016/06/11 16:00:00', function (event) {
                 $(this).html(event.strftime('%H'));
             });
-            $('#minuten').countdown('2016/06/11 15:30:00', function (event) {
+            $('#minuten').countdown('2016/06/11 16:00:00', function (event) {
                 $(this).html(event.strftime('%M'));
             });
-            $('#sekunden').countdown('2016/06/11 15:30:00', function (event) {
+            $('#sekunden').countdown('2016/06/11 16:00:00', function (event) {
                 $(this).html(event.strftime('%S'));
             });
     </script>
