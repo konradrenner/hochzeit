@@ -17,6 +17,7 @@
 package at.kuk.hochzeit.hochzeit.rest.config;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.ws.rs.core.Application;
 
 /**
  *
@@ -24,6 +25,6 @@ import javax.enterprise.context.ApplicationScoped;
  */
 @ApplicationScoped
 @javax.ws.rs.ApplicationPath("rest")
-public class ApplicationConfig {
+public class ApplicationConfig extends Application {
 
 }
