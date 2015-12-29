@@ -20,11 +20,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Serializable;
-import javax.annotation.Resource;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.servlet.http.Part;
-import org.kore.jca.file.FileSource;
 
 /**
  *
@@ -35,9 +33,6 @@ import org.kore.jca.file.FileSource;
 public class UploadBean implements Serializable {
     private Part file;
     private String fileContent;
-
-    @Resource(name = "java:global/FileSource")
-    FileSource fileSource;
 
     public void upload() {
         try {
