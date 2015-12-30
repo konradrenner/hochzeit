@@ -6,13 +6,11 @@
                 template="./mainTemplate.xhtml">
 
     <ui:define name="content">
-        Datei uploaden
-        <h:form id="form" enctype="multipart/form-data">
-            <h:inputFile id="file" value="#{uploadBean.file}"/>
-            <h:commandButton value="Upload"
-                             action="#{uploadBean.upload}"/>
+        <h:form>
+            <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload}" mode="advanced" dragDropSupport="true"
+                          update="messages" sizeLimit="9000000" allowTypes="/(\.|\/)(gif|jpe?g|png|zip|rar)$/" />
 
-            <h:inputTextarea value="#{uploadBean.fileContent}" cols="30" rows="30" readonly="true"/>
+            <p:growl id="messages" showDetail="true" />
         </h:form>
     </ui:define>
 

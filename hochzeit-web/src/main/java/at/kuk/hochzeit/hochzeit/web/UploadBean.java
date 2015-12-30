@@ -16,50 +16,22 @@
  */
 package at.kuk.hochzeit.hochzeit.web;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.Serializable;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.servlet.http.Part;
+import org.primefaces.event.FileUploadEvent;
 
 /**
  *
  * @author Konrad Renner
  */
-@SessionScoped
+@RequestScoped
 @Named
 public class UploadBean implements Serializable {
-    private Part file;
-    private String fileContent;
-
-    public void upload() {
-        try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(file.getInputStream()));
-
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                sb.append(line);
-            }
-
-
-            fileContent = sb.toString();
-        } catch (IOException e) {
-            // Error handling
-        }
-    }
-
-    public Part getFile() {
-        return file;
-    }
-
-    public void setFile(Part file) {
-        this.file = file;
-    }
-
-    public String getFileContent() {
-        return fileContent;
+    public void handleFileUpload(FileUploadEvent event) {
+        FacesMessage message = new FacesMessage("Succesful", event.getFile().getFileName() + " is uploaded.");
+        FacesContext.getCurrentInstance().addMessage(null, message);
     }
 }
