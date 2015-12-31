@@ -16,11 +16,10 @@
  */
 package at.kuk.hochzeit.hochzeit.web;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -34,7 +33,6 @@ import javax.enterprise.context.Dependent;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import org.kore.jca.file.FileSource;
 import org.primefaces.event.FileUploadEvent;
 
 /**
@@ -49,33 +47,26 @@ public class UploadBean implements Serializable {
     @Resource
     SessionContext context;
 
-    @Resource(name = "java:global/jca/FileStore")
-    FileSource source;
-
     public void handleFileUpload(FileUploadEvent event) {
         String filename = event.getFile().getFileName().substring(event.getFile().getFileName().lastIndexOf(File.pathSeparator) + 1);
 
         try {
             Path newDirectory = Files.createDirectories(Paths.get(System.getProperty("hochzeit.filePath"), context.getCallerPrincipal().getName(), new Timestamp(System.currentTimeMillis()).toString()));
 
-            try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(newDirectory.toString(), filename), StandardOpenOption.CREATE_NEW);
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(event.getFile().getInputstream()))) {
+            try (OutputStream output = Files.newOutputStream(Paths.get(newDirectory.toString(), filename), StandardOpenOption.CREATE_NEW);
+                    InputStream input = event.getFile().getInputstream()) {
 
-                String line;
-                boolean firstRun = true;
-                while ((line = reader.readLine()) != null) {
-                    if (firstRun) {
-                        firstRun = false;
-                        writer.newLine();
-                    }
-                    writer.write(line);
+                byte[] b = new byte[2048];
+                int length;
+
+                while ((length = input.read(b)) != -1) {
+                    output.write(b, 0, length);
                 }
 
             FacesMessage message = new FacesMessage("Succesful", event.getFile().getFileName() + " is uploaded.");
                 FacesContext.getCurrentInstance().addMessage(null, message);
             }
         } catch (IOException ex) {
-            ex.printStackTrace();
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Fehler", ex.getMessage());
             FacesContext.getCurrentInstance().addMessage(null, message);
         }
