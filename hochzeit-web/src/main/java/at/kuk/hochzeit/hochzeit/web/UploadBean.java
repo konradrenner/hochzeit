@@ -16,6 +16,7 @@
  */
 package at.kuk.hochzeit.hochzeit.web;
 
+import at.kuk.hochzeit.hochzeit.SessionTimestamp;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,13 +26,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.sql.Timestamp;
 import javax.annotation.Resource;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.enterprise.context.Dependent;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 import org.primefaces.event.FileUploadEvent;
 
@@ -47,11 +48,14 @@ public class UploadBean implements Serializable {
     @Resource
     SessionContext context;
 
+    @Inject
+    SessionTimestamp tstProvider;
+
     public void handleFileUpload(FileUploadEvent event) {
         String filename = event.getFile().getFileName().substring(event.getFile().getFileName().lastIndexOf(File.pathSeparator) + 1);
 
         try {
-            Path newDirectory = Files.createDirectories(Paths.get(System.getProperty("hochzeit.filePath"), context.getCallerPrincipal().getName(), new Timestamp(System.currentTimeMillis()).toString()));
+            Path newDirectory = Files.createDirectories(Paths.get(System.getProperty("hochzeit.filePath"), context.getCallerPrincipal().getName(), tstProvider.getSessionTimestamp().toString()));
 
             try (OutputStream output = Files.newOutputStream(Paths.get(newDirectory.toString(), filename), StandardOpenOption.CREATE_NEW);
                     InputStream input = event.getFile().getInputstream()) {
