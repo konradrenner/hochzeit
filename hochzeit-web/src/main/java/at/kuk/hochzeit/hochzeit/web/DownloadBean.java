@@ -16,11 +16,14 @@
  */
 package at.kuk.hochzeit.hochzeit.web;
 
-import java.io.InputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.servlet.ServletContext;
 import org.primefaces.model.DefaultStreamedContent;
 import org.primefaces.model.StreamedContent;
 
@@ -35,8 +38,13 @@ public class DownloadBean {
     private StreamedContent file;
 
     public StreamedContent getFile() {
-        InputStream stream = ((ServletContext) FacesContext.getCurrentInstance().getExternalContext().getContext()).getResourceAsStream("/resources/favicon.png");
-        file = new DefaultStreamedContent(stream, "image/png", "favicon.png");
+
+        try {
+            file = new DefaultStreamedContent(Files.newInputStream(Paths.get(System.getProperty("hochzeit.filePath"), "download", "bilder.zip"), StandardOpenOption.READ), "application/zip", "bilder.zip");
+        } catch (IOException ex) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Fehler", ex.getMessage());
+            FacesContext.getCurrentInstance().addMessage(null, message);
+        }
         return file;
     }
 }
