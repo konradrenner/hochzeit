@@ -170,10 +170,10 @@
             $('#monate').countdown('2016/06/11 16:00:00', function (event) {
                 var monate = event.strftime('%m');
                 
-                var tagDesMonats = new Date().getDate();
-                if(tagDesMonats > 11){
-                    monate = monate - 1;
-                }
+//                var tagDesMonats = new Date().getDate();
+//                if(tagDesMonats > 11){
+//                    monate = monate - 1;
+//                }
                 
                 if(monate.length < 2){
                     monate = "0" + monate;
