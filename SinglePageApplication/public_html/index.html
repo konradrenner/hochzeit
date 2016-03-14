@@ -22,36 +22,67 @@
         <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/bootstrap-theme.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/gallery/blueimp-gallery.min.css">
+        <link rel="stylesheet" href="css/lightbox/featherlight.css" type="text/css"/>
+
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/vendor/jquery-1.11.0.js"></script> 
         <script src="js/vendor/bgswitcher/jquery.bgswitcher.js"></script>
         <script src="js/vendor/countdown/jquery.countdown.min.js"></script>
+        
         <script> 
         $(function(){
           if(window.screen.availWidth >= 800){
                $("#home").load("home.html"); 
-            }else{
+          }else{
                $("#home").load("home_mobil.html"); 
-            }
+          }
         });
         $(function(){
           $("#brautpaar").load("brautpaar.html"); 
         });
         $(function(){
+        	if(isAfterWedding()){
+        			$("#ablauf_ueberschrift_text").first().text("GALERIE");
+        			$("#ablauf_item").first().text("GALERIE");
+        			$("#geschenke_item").first().text("DANKE");
+        			//$("#ablauf_daten").load("galerie.html");
+        	}else{
+        		$("#galerie_daten").remove();
+        		$("#galerie_upload").remove();
             if(window.screen.availWidth >= 1025){
                 $("#ablauf_daten").load("ablauf.html"); 
             }else{
                 $("#ablauf_daten").load("ablauf_mobile.html"); 
             }
+          }
         });
         $(function(){
-          $("#route_daten").load("kontakt.html"); 
+        	if(isAfterWedding()){
+        		$("#route_daten").remove();
+        		$("#route").remove();
+        		$("#li_route").remove();
+        	}else{
+        		$("#route_daten").load("kontakt.html");
+        	}
         });
         $(function(){
-          $("#unterkuenfte_daten").load("unterkuenfte.html"); 
+        	var datum = new Date();
+        	if(isAfterWedding()){
+        		$("#unterkuenfte_daten").remove();
+        		$("#unterkuenfte").remove();
+        		$("#li_unterkuenfte").remove();
+        	}else{
+        		$("#unterkuenfte_daten").load("unterkuenfte.html"); 
+        	}
         });
+        
+        function isAfterWedding(){
+        	var datum = new Date();
+        	return datum.getDate() > 11 && datum.getMonth() >= 5;
+        }
         
         function isScrolledIntoView(elem)
         {
@@ -84,8 +115,8 @@
                   <li><a id="home_item" class="navtext_selected" href="#home" onclick="selectHome()">HOME</a></li>
                   <li><a id="brautpaar_item" class="navtext" href="#brautpaar" onclick="selectBrautpaar()">BRAUTPAAR</a></li>
                   <li><a id="ablauf_item" class="navtext" href="#ablauf" onclick="selectAblauf()">ABLAUF</a></li>
-                  <li><a id="route_item" class="navtext" href="#route" onclick="selectRoute()">ROUTE</a></li>
-                  <li><a id="unterkuenfte_item" class="navtext" href="#unterkuenfte" onclick="selectUnterkuenfte()">UNTERKÜNFTE</a></li>
+                  <li id="li_route"><a id="route_item" class="navtext" href="#route" onclick="selectRoute()">ROUTE</a></li>
+                  <li id="li_unterkuenfte"><a id="unterkuenfte_item" class="navtext" href="#unterkuenfte" onclick="selectUnterkuenfte()">UNTERKÜNFTE</a></li>
                   <li><a id="geschenke_item" class="navtext" href="#geschenke" onclick="selectGeschenke()">GESCHENKE</a></li>
               </ul> <!-- END .cl-effect-3, .nav, .nav-justified -->
           </div>
@@ -96,7 +127,9 @@
     </div>
     <script>
         $( window ).scroll(function() {
-            if(isScrolledIntoView($('#brautpaar')) || isScrolledIntoView($('#countdown'))){
+        	  if(isAfterWedding() && ((window.innerHeight + window.scrollY) >= document.body.offsetHeight)){
+        	  	  selectGeschenke();
+            }else if(isScrolledIntoView($('#brautpaar')) || isScrolledIntoView($('#countdown'))){
                 selectBrautpaar();
             }else if(isScrolledIntoView($('#ablauf_ueberschrift')) || isScrolledIntoView($('#ablauf_daten'))){
                 selectAblauf();
@@ -120,6 +153,17 @@
             }
         });
     </script>
+    
+    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+        <div class="slides"></div>
+    	<h3 class="title"></h3>
+    	<a class="prev">‹</a>
+    	<a class="next">›</a>
+    	<a class="close">×</a>
+    	<a class="play-pause"></a>
+    	<ol class="indicator"></ol>
+    </div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div id="home" class="jumbotron_home">
@@ -221,13 +265,47 @@
         <div class="row brautpaar">
             <hr class="abschnitt_hr_lang" >
             <hr class="abschnitt_hr_kurz" >
-            <div class="ueberschrift_brautpaar">ABLAUF</div>
+            <div id="ablauf_ueberschrift_text" class="ueberschrift_brautpaar">ABLAUF</div>
         </div>
     </div> 
     <script src="js/ablauf.js"></script>    
 
     <div id="ablauf_daten" class="container">
-    </div> 
+    </div>
+    <div id="galerie_daten" class="container">
+    	<div id="galerie_bilder">
+    		<div class="col-md-4">
+    			<a href="image_1.jpg" class="thumbnail" data-gallery>
+        		<img src="image_1.jpg" >
+    			</a>
+    		</div>
+    		<div class="col-md-4">
+    			<a href="image_2.jpg" class="thumbnail" data-gallery>
+        		<img src="image_2.jpg" >
+    			</a>
+    		</div>
+    		<div class="col-md-4">
+    			<a href="image_3.jpg" class="thumbnail" data-gallery>
+        		<img src="image_3.jpg" >
+    			</a>
+    		</div>
+    		<div class="col-md-4">
+    			<a href="image_4.jpg" class="thumbnail" data-gallery>
+        		<img src="image_4.jpg" >
+    			</a>
+    		</div>
+    		<div class="col-md-4">
+    			<a href="image_5.jpg" class="thumbnail" data-gallery>
+        		<img src="image_5.jpg" >
+    			</a>
+    		</div>
+			</div>
+    </div>
+    <div id="galerie_upload" class="container">
+    	<div class="col-md-4">
+    		<a href="#" data-featherlight="<iframe class='lightbox' src='http://famre.selfhost.eu:8181/upload/' width='500' height='300' id='galerie_iframe' style='border:none;'></iframe>" class="btn btn-info" role="button">Weitere Bilder & Upload</a>
+    	</div>
+    </div>
 
     <div id="route" class="leerzeile_route">
         &nbsp;
@@ -269,21 +347,68 @@
             <!--  <p>&copy; K&K 2008 bis an ihr Lebensende</p> -->
             <p>Made with love, from K-UND-K</p>
         </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    </div> <!-- /container -->        
+    
+    <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+		<div id="blueimp-gallery" class="blueimp-gallery">
+		    <!-- The container for the modal slides -->
+		    <div class="slides"></div>
+		    <!-- Controls for the borderless lightbox -->
+		    <h3 class="title"></h3>
+		    <a class="prev">‹</a>
+		    <a class="next">›</a>
+		    <a class="close">×</a>
+		    <a class="play-pause"></a>
+		    <ol class="indicator"></ol>
+		    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+		    <div class="modal fade">
+		        <div class="modal-dialog">
+		            <div class="modal-content">
+		                <div class="modal-header">
+		                    <button type="button" class="close" aria-hidden="true">&times;</button>
+		                    <h4 class="modal-title"></h4>
+		                </div>
+		                <div class="modal-body next"></div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-default pull-left prev">
+		                        <i class="glyphicon glyphicon-chevron-left"></i>
+		                        Previous
+		                    </button>
+		                    <button type="button" class="btn btn-primary next">
+		                        Next
+		                        <i class="glyphicon glyphicon-chevron-right"></i>
+		                    </button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+    
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>');</script>
 
-        <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="js/main.js"></script>
+   	<script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
+    <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+    </script>
+    
+    <script src="js/gallery/jquery.blueimp-gallery.min.js"></script> 
+    <script>
+			document.getElementById('galerie_bilder').onclick = function (event) {
+    	event = event || window.event;
+    	var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    		blueimp.Gallery(links, options);
+			};
+		</script>
+		<script src="js/lightbox/featherlight.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
