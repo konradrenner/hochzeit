@@ -55,7 +55,7 @@ public class UploadBean implements Serializable {
         String filename = event.getFile().getFileName().substring(event.getFile().getFileName().lastIndexOf(File.pathSeparator) + 1);
 
         try {
-            Path newDirectory = Files.createDirectories(Paths.get(System.getProperty("hochzeit.filePath"), context.getCallerPrincipal().getName(), tstProvider.getSessionTimestamp().toString()));
+            Path newDirectory = Files.createDirectories(Paths.get(System.getProperty("hochzeit.filePath"), UserMapping.resolve(context.getCallerPrincipal()).replaceAll(" ", "_"), tstProvider.getSessionTimestamp().toString()));
 
             try (OutputStream output = Files.newOutputStream(Paths.get(newDirectory.toString(), filename), StandardOpenOption.CREATE_NEW);
                     InputStream input = event.getFile().getInputstream()) {
