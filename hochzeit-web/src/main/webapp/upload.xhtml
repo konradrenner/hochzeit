@@ -5,17 +5,32 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="./mainTemplate.xhtml">
 
+    <ui:define name="top">
+        FOTO/VIDEO UPLOAD
+    </ui:define>
+
     <ui:define name="content">
         <p:dialog modal="true" widgetVar="statusDialog" header="Status" draggable="false" closable="false" resizable="false">
             <p:graphicImage name="/demo/images/ajaxloadingbar.gif" />
         </p:dialog>
 
         <h:form>
+
+            <!--
             <p:commandButton value="Download" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="ui-icon-arrowthick-1-s">
                 <p:fileDownload value="#{downloadBean.file}" />
             </p:commandButton>
-            <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload}" mode="advanced" dragDropSupport="true"
-                          update="messages" sizeLimit="9000000" allowTypes="/(\.|\/)(gif|jpe?g|png|zip|rar)$/" />
+            -->
+
+            <div>
+                Wähle Fotos/Videos, die du dem Hochzeitspaar zur Verfügung stellen möchten.<br></br>
+                Du kannst die Bilder ganz einfach im folgenden Bereich mittels "Drag and Drop" reinziehen oder wähle den Button "Wählen" um Dateien auszwählen.<br></br>
+            </div>
+
+            <div>
+                <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload}" mode="advanced" dragDropSupport="true"
+                              update="messages" sizeLimit="9000000" allowTypes="/(\.|\/)(gif|jpe?g|png|zip|rar)$/" />
+            </div>
 
             <p:growl id="messages" showDetail="true" />
         </h:form>
