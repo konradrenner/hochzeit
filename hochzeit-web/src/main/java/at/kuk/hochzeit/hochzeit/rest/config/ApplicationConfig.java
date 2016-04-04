@@ -24,7 +24,7 @@ import javax.ws.rs.core.Application;
  * @author Konrad Renner
  */
 @ApplicationScoped
-@javax.ws.rs.ApplicationPath("rest")
+@javax.ws.rs.ApplicationPath("services")
 public class ApplicationConfig extends Application {
 
 }

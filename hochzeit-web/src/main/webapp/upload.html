@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+Copyright (C) 2016 Konrad Renner
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="icon" type="image/png" href="./resources/favicon.png"/>
+
+        <link href="./resources/dropzone/basic.min.css" rel="stylesheet" />
+        <link href="./resources/dropzone/dropzone.min.css" rel="stylesheet" />
+        <link href="./resources/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <script src="./resources/dropzone/dropzone.min.js"></script>
+
+        <title>Fotoupload Hochzeit Kerstin und Konrad</title>
+    </head>
+    <body>
+        <form action="/kuk/services/upload/images" method="post" class="dropzone" id="kukuploadzone">
+            <div class="fallback">
+                <input name="file" type="file" />
+            </div>
+
+            <div class="dropzone-preview"></div>
+
+            <script>
+                var myDropzone = new Dropzone("div.dropzone",
+                {
+                createImageThumbnails: false,
+                addRemoveLinks: false,
+                parallelUploads: 1, //my JAX-RS service does only allow one upload at a time but as DropzoneJS has internal queueing it does support dragging and dropping of multiple files at the same time
+                acceptedFiles: 'image/*',
+                dictDefaultMessage: '<i class="fa fa-arrow-right fa-1x"></i> #{messages['dropzone.default_message']}', //JSF i18n support
+                previewsContainer: "div.dropzone-preview"
+                });
+
+                myDropzone.on("success", function(file) {
+               $("div.refresh-gallery a").click();
+                });
+
+                myDropzone.on("error", function(file) {
+                showalert("#alert_placeholder", "#{messages['file_upload.error']} '"+file.name+"'", "danger"); //Bootstrap is used to display alerts
+               });</pre>
+               function showalert(placeholder, message, alerttype) {
+
+               var alertid = getRandomAlertId();
+
+               $(placeholder)
+                .append(
+                '<div id="'
+                + alertid
+                                            + '" class="alert alert-'
+                                            + alerttype
+                                            + ' fade in"><a class="close" data-dismiss="alert">×</a><span>'
+                                            + message + '</span></div>')
+
+                                    setTimeout(function() { // this will automatically close the alert and
+                                    // remove this if the users doesnt close it in 5 secs
+                                    $("#" + alertid).remove();
+                                    }, 5000);
+                            }
+            </script>
+        </form>
+    </body>
+</html>

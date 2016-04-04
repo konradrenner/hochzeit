@@ -4,7 +4,7 @@
 
     <groupId>at.kuk.hochzeit</groupId>
     <artifactId>hochzeit-web</artifactId>
-    <version>1.2</version>
+    <version>2.0</version>
     <packaging>war</packaging>
 
     <name>hochzeit-web</name>
@@ -16,11 +16,6 @@
     
     <dependencies>
         <dependency>
-            <groupId>org.primefaces</groupId>
-            <artifactId>primefaces</artifactId>
-            <version>5.3</version>
-        </dependency>
-        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
@@ -30,6 +25,12 @@
             <groupId>org.kore.jca</groupId>
             <artifactId>jca-file-api</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-multipart-provider</artifactId>
+            <version>3.0.16.Final</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -82,5 +83,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

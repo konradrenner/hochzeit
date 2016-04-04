@@ -2,38 +2,64 @@
 <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:p="http://primefaces.org/ui"
                 template="./mainTemplate.xhtml">
 
     <ui:define name="top">
-        FOTO/VIDEO UPLOAD
+        <link href="./resources/dropzone/basic.min.css" rel="stylesheet" ></link>
+        <link href="./resources/dropzone/dropzone.min.css" rel="stylesheet" ></link>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"></link>
+        <script src="./resources/dropzone/dropzone.min.js"></script>
     </ui:define>
 
     <ui:define name="content">
-        <p:dialog modal="true" widgetVar="statusDialog" header="Status" draggable="false" closable="false" resizable="false">
-            <p:graphicImage name="/demo/images/ajaxloadingbar.gif" />
-        </p:dialog>
-
-        <h:form>
-
-            <!--
-            <p:commandButton value="Download" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="ui-icon-arrowthick-1-s">
-                <p:fileDownload value="#{downloadBean.file}" />
-            </p:commandButton>
-            -->
-
-            <div>
-                Wähle Fotos/Videos, die du dem Hochzeitspaar zur Verfügung stellen möchten.<br></br>
-                Du kannst die Bilder ganz einfach im folgenden Bereich mittels "Drag and Drop" reinziehen oder wähle den Button "Wählen" um Dateien auszwählen.<br></br>
+        <form action="/upload" class="dropzone" id="kukuploadzone">
+            <div class="fallback">
+                <input name="file" type="file" />
             </div>
 
-            <div>
-                <p:fileUpload fileUploadListener="#{uploadBean.handleFileUpload}" mode="advanced" dragDropSupport="true"
-                              update="messages" sizeLimit="9000000" allowTypes="/(\.|\/)(gif|jpe?g|png|zip|rar)$/" />
-            </div>
+            <div class="dropzone-preview"></div>
 
-            <p:growl id="messages" showDetail="true" />
-        </h:form>
+            <script>
+                var myDropzone = new Dropzone("div.dropzone",
+                {
+                url: "/kuk/images",
+                createImageThumbnails: false,
+                addRemoveLinks: false,
+                parallelUploads: 1, //my JAX-RS service does only allow one upload at a time but as DropzoneJS has internal queueing it does support dragging and dropping of multiple files at the same time
+                acceptedFiles: 'image/*',
+                dictDefaultMessage: '<i class="fa fa-arrow-right fa-1x"></i> #{messages['dropzone.default_message']}', //JSF i18n support
+                previewsContainer: "div.dropzone-preview"
+                });
+ 
+                myDropzone.on("success", function(file) {
+               $("div.refresh-gallery a").click();
+                });
+
+                myDropzone.on("error", function (file) {
+                    showalert("#alert_placeholder", "#{messages['file_upload.error']} '" + file.name + "'", "danger"); //Bootstrap is used to display alerts
+                });
+                
+                function showalert(placeholder, message, alerttype) {
+
+                    var alertid = getRandomAlertId();
+
+                    $(placeholder)
+                            .append(
+                                    '<div id="'
+                                    + alertid
+                                    + '" class="alert alert-'
+                                    + alerttype
+                                    + ' fade in"><a class="close" data-dismiss="alert">×</a><span>'
+                                    + message + '</span></div>');
+
+                    setTimeout(function () { // this will automatically close the alert and
+                        // remove this if the users doesnt close it in 5 secs
+                        $("#" + alertid).remove();
+                    }, 5000);
+
+                }
+            </script>
+        </form>
     </ui:define>
 
 </ui:composition>

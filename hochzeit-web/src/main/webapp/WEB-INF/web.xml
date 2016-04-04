@@ -4,10 +4,6 @@
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
-    <context-param>
-        <param-name>primefaces.UPLOADER</param-name>
-        <param-value>native</param-value>
-    </context-param>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -28,8 +24,9 @@
         </param-name>
         <param-value>true</param-value>
     </context-param>
+    
     <welcome-file-list>
-        <welcome-file>upload.xhtml</welcome-file>
+        <welcome-file>upload.html</welcome-file>
     </welcome-file-list>
     
     <security-constraint>
