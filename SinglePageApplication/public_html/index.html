@@ -82,7 +82,12 @@
         
         function isAfterWedding(){
         	var datum = new Date();
-        	return datum.getDate() > 11 && datum.getMonth() >= 5;
+                
+                if(datum.getMonth() === 5 && datum.getDate() > 11){
+                    return true;
+                }
+                
+        	return datum.getMonth() >= 6;
         }
         
         function isScrolledIntoView(elem)
