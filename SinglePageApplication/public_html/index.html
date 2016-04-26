@@ -46,8 +46,8 @@
         });
         $(function(){
         	if(isAfterWedding()){
-        			$("#ablauf_ueberschrift_text").first().text("GALERIE");
-        			$("#ablauf_item").first().text("GALERIE");
+        			$("#ablauf_ueberschrift_text").first().text("IMPRESSIONEN");
+        			$("#ablauf_item").first().text("IMPRESSIONEN");
         			$("#geschenke_item").first().text("DANKE");
         			//$("#ablauf_daten").load("galerie.html");
         	}else{
@@ -65,8 +65,10 @@
         		$("#route_daten").remove();
         		$("#route").remove();
         		$("#li_route").remove();
+                        $("#text_geschenke").remove();
         	}else{
         		$("#route_daten").load("kontakt.html");
+                        $("#text_danke").remove();
         	}
         });
         $(function(){
@@ -87,7 +89,7 @@
                     return true;
                 }
                 
-        	return datum.getMonth() >= 6;
+        	return datum.getMonth() >= 2;
         }
         
         function isScrolledIntoView(elem)
@@ -279,7 +281,10 @@
     <div id="ablauf_daten" class="container">
     </div>
     <div id="galerie_daten" class="container">
-    	<div id="galerie_bilder">
+        <div>
+            <p class="galerie_text">Wir würden uns darüber freuen, wenn ihr eure Impressionen die ihr mit Fotos<br>und Videos an unserem Hochzeitstag festgehalten habt, mit uns teilen würdet.</p>
+        </div>
+        <div id="galerie_bilder">
     		<div class="col-md-4">
     			<a href="image_1.jpg" class="thumbnail" data-gallery>
         		<img src="image_1.jpg" >
@@ -309,7 +314,7 @@
     </div>
     <div id="galerie_upload" class="container">
     	<div class="col-md-4">
-            <a href="#" data-featherlight="<iframe class='lightbox' src='http://famre.selfhost.eu:8181/kuk/upload.html' width='500' height='300' id='galerie_iframe' style='border:none;'></iframe>" class="btn btn-info" role="button">Weitere Bilder & Upload</a>
+            <a href="#" data-featherlight="<iframe class='lightbox' src='http://localhost:8080/kuk/upload.html' width='500' height='300' id='galerie_iframe' style='border:none;'></iframe>" class="btn-hochzeit" role="button">Jetzt hochladen</a>
         </div>
     </div>
 
@@ -335,12 +340,22 @@
     </div>
 
     <div id="geschenke_daten" class="container_geschenke">
-        <div class="geschenke-text-ueberschrift">
-            <p>Träume verwirklichen</p>
+        <div id="text_geschenke">
+            <div class="geschenke-text-ueberschrift">
+                <p>Träume verwirklichen</p>
+            </div>
+            <div class="geschenke-text">
+                <p>Das beste Geschenk ist eure Zeit und gute Laune,<br> damit macht ihr diesen für uns wichtigen Tag zum schönsten in unseren Leben.</p>
+                <p>Falls ihr uns noch zusätzlich Freude machen wollt, freuen wir uns über einen Geldbeitrag.</p>
+            </div>
         </div>
-        <div class="geschenke-text">
-            <p>Das beste Geschenk ist eure Zeit und gute Laune,<br> damit macht ihr diesen für uns wichtigen Tag zum schönsten in unseren Leben.</p>
-            <p>Falls ihr uns noch zusätzlich Freude machen wollt, freuen wir uns über einen Geldbeitrag.</p>
+        <div id="text_danke">
+            <div class="geschenke-text-ueberschrift">
+                <p>Unsere Hochzeit, ein Tag der uns immer in Erinnerung bleiben wird</p>
+            </div>
+            <div class="geschenke-text">
+                <p>Wir bedanken uns herzlich für die unvergesslichen Stunden, die wir mit euch gemeinsam erleben durften und die wir für immer in unserem Herzen behalten werden.</p>
+            </div>
         </div>
     </div>
 
