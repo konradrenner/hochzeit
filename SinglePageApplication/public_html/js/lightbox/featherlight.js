@@ -135,12 +135,13 @@
 				css = !self.resetCss ? self.namespace : self.namespace+'-reset', /* by adding -reset to the classname, we reset all the default css */
 				$background = $(self.background || [
 					'<div class="'+css+'-loading '+css+'">',
-						'<div class="'+css+'-content">',
+                        '<div class="' + css + '-content">',
+                        '<span class="upload-title-text" >Medien hochladen</span>',
 							'<span class="'+css+'-close-icon '+ self.namespace + '-close">',
 								self.closeIcon,
 							'</span>',
-							'<div class="'+self.namespace+'-inner">' + self.loading + '</div>',
-						'</div>',
+                        '<div class="' + self.namespace + '-inner">' + self.loading + '</div>',
+                        '</div>',
 					'</div>'].join('')),
 				closeButtonSelector = '.'+self.namespace+'-close' + (self.otherClose ? ',' + self.otherClose : '');
 
