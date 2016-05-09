@@ -190,8 +190,11 @@
     opacity: 0.5; }
 .dropzone .dz-message {
     padding-top: 15%;
-    padding-left: 6%;
+    margin-left: 5%;
+    margin-right: 5%;
     text-align: center;
+    border: black dashed medium;
+    padding-bottom: 15%;
     margin: 2em 0; }
 .dropzone .dz-preview {
     position: relative;

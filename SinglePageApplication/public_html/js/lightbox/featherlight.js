@@ -136,11 +136,11 @@
 				$background = $(self.background || [
 					'<div class="'+css+'-loading '+css+'">',
                         '<div class="' + css + '-content">',
-                        '<span class="upload-title-text" >Medien hochladen</span>',
+                        '<div class="upload-title-text" >Medien hochladen</div>',
 							'<span class="'+css+'-close-icon '+ self.namespace + '-close">',
 								self.closeIcon,
                         '</span>',
-                        '<hr />',
+                        '<hr class="hr-lightbox"/>',
                         '<div class="' + self.namespace + '-inner">' + self.loading + '</div>',
                         '</div>',
 					'</div>'].join('')),
