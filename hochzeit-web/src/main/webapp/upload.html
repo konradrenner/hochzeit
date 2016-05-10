@@ -30,7 +30,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <title>Fotoupload Hochzeit Kerstin und Konrad</title>
     </head>
     <body>
-        <form action="/kuk/services/upload/images" method="post" class="dropzone" id="kukuploadzone">
+        <div class="droparea">
+            <form action="/kuk/services/upload/images" method="post" class="dropzone" id="kukuploadzone">
             <div class="fallback">
                 <input name="file" type="file" />
             </div>
@@ -40,14 +41,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             <script>
                 var myDropzone = new Dropzone("div.dropzone",
                 {
-                createImageThumbnails: false,
-                addRemoveLinks: false,
+                createImageThumbnails: false,   
                 parallelUploads: 1, //my JAX-RS service does only allow one upload at a time but as DropzoneJS has internal queueing it does support dragging and dropping of multiple files at the same time
-                acceptedFiles: 'image/*',
+                acceptedFiles: 'image/*','video/*','audio/*','text/*','application/zip','application/x-rar-compressed',
                 dictDefaultMessage: '<i class="fa fa-arrow-right fa-1x"></i> #{messages['dropzone.default_message']}', //JSF i18n support
                 previewsContainer: "div.dropzone-preview"
                 });
-
+                
                 myDropzone.on("success", function(file) {
                $("div.refresh-gallery a").click();
                 });
@@ -74,6 +74,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                     }, 5000);
                             }
             </script>
+
         </form>
+        </div>
+        <button id="submit-all"  class="btn-hochzeit" onclick="myDropzone.processQueue()">Hochalden starten</button>
     </body>
 </html>
