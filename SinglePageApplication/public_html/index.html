@@ -66,6 +66,7 @@
         		$("#route").remove();
         		$("#li_route").remove();
                         $("#text_geschenke").remove();
+                        document.getElementById("geschenke_daten").style.backgroundImage="url(css/danke1_1.jpg)";
         	}else{
         		$("#route_daten").load("kontakt.html");
                         $("#text_danke").remove();
@@ -284,6 +285,18 @@
         <div>
             <p class="galerie_text">Wir würden uns darüber freuen, wenn ihr eure Impressionen die ihr mit Fotos<br>und Videos an unserem Hochzeitstag festgehalten habt, mit uns teilen würdet.</p>
         </div>
+        <div class="upload_section">
+            <img class="resize" src="./img/home/wolken.jpg" alt="Wolken" />
+            <div class="upload_section_button">
+                <a href="#" data-featherlight="<iframe class='lightbox' src='http://localhost:8080/kuk/upload.html' width='650' height='440' id='galerie_iframe' style='border:none;'></iframe>" class="btn-hochzeit" role="button">Medien hochladen</a>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div id="galerie_daten" class="container">
+        <div>
+            <p class="galerie_text">Wir würden uns darüber freuen, wenn ihr eure Impressionen die ihr mit Fotos<br>und Videos an unserem Hochzeitstag festgehalten habt, mit uns teilen würdet.</p>
+        </div>
         <div id="galerie_bilder">
     		<div class="col-md-4">
     			<a href="image_1.jpg" class="thumbnail" data-gallery>
@@ -312,11 +325,13 @@
     		</div>
 			</div>
     </div>
+    
     <div id="galerie_upload" class="container">
     	<div class="col-md-4">
             <a href="#" data-featherlight="<iframe class='lightbox' src='http://localhost:8080/kuk/upload.html' width='650' height='440' id='galerie_iframe' style='border:none;'></iframe>" class="btn-hochzeit" role="button">Jetzt hochladen</a>
         </div>
     </div>
+    -->
 
     <div id="route" class="leerzeile_route">
         &nbsp;
