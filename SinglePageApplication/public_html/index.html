@@ -90,7 +90,7 @@
                     return true;
                 }
                 
-        	return datum.getMonth() >= 2;
+        	return false;
         }
         
         function isScrolledIntoView(elem)
@@ -221,48 +221,64 @@
     </div>
     <script>
         //TODO nach der hochzeit mit diesen code ersetzen: http://keith-wood.name/countdownRef.html#since
-            $('#monate').countdown('2016/06/11 15:00:00',  function (event) {
+            $('#monate').countdown('2016/06/11 15:00:00', {elapse: true}).on('update.countdown', function (event) {
                 var monate = event.strftime('%m');
-                
-//                var tagDesMonats = new Date().getDate();
-//                if(tagDesMonats > 11){
-//                    monate = monate - 1;
-//                }
-                
-                if(monate.length < 2){
-                    monate = "0" + monate;
-                }
                 
                 $(this).html(monate);
             });
-            $('#tage').countdown('2016/06/11 15:00:00', function (event) {
+            $('#tage').countdown('2016/06/16 15:00:00', {elapse: true}).on('update.countdown', function (event) {
                 
-                var aktDate = new Date();
-                var tageDesMonats = new Date(aktDate.getFullYear(),aktDate.getMonth()+1,0).getDate();
-                var tagDesMonats = aktDate.getDate();
-                
-                var differenz = tageDesMonats - tagDesMonats;
-                
-                var korrekteTage;
-                if(tagDesMonats <= 11){
-                    korrekteTage = 11 - tagDesMonats;
+                if(isAfterWedding()){
+                    var aktDate = new Date();
+                    var tageDesMonats = new Date(aktDate.getFullYear(),aktDate.getMonth()+1,0).getDate();
+                    var tagDesMonats = aktDate.getDate();
+
+                    var korrekteTage = tagDesMonats;
+                    
+                    if(korrekteTage === 11){
+                        korrekteTage = 0;
+                    }else if(tagDesMonats >= 11 ){
+                        korrekteTage = tagDesMonats - 11;
+                    }else{
+                        var tageVorigesMonat = new Date(aktDate.getFullYear(),aktDate.getMonth(),0).getDate();
+                        var anzahlTageVormonatBisMonatswechsel = tageVorigesMonat - 11;
+                        korrekteTage = korrekteTage + anzahlTageVormonatBisMonatswechsel;
+                    }
                     
                     if(korrekteTage < 10){
                         korrekteTage = "0"+korrekteTage;
                     }
+                
+                    $(this).html(korrekteTage);
                 }else{
-                    korrekteTage = differenz + 11;
+                    var aktDate = new Date();
+                    var tageDesMonats = new Date(aktDate.getFullYear(),aktDate.getMonth()+1,0).getDate();
+                    var tagDesMonats = aktDate.getDate();
+
+                    var differenz = tageDesMonats - tagDesMonats;
+
+                    var korrekteTage;
+                    if(tagDesMonats <= 11){
+                        korrekteTage = 11 - tagDesMonats;
+
+                        if(korrekteTage < 10){
+                            korrekteTage = "0"+korrekteTage;
+                        }
+                    }else{
+                        korrekteTage = differenz + 11;
+                    }
+                
+                    $(this).html(korrekteTage);                
                 }
                 
-                $(this).html(korrekteTage);
             });
-            $('#stunden').countdown('2016/06/11 15:00:00', function (event) {
+            $('#stunden').countdown('2016/06/11 15:00:00', {elapse: true}).on('update.countdown', function (event) {
                 $(this).html(event.strftime('%H'));
             });
-            $('#minuten').countdown('2016/06/11 15:00:00', function (event) {
+            $('#minuten').countdown('2016/06/11 15:00:00', {elapse: true}).on('update.countdown', function (event) {
                 $(this).html(event.strftime('%M'));
             });
-            $('#sekunden').countdown('2016/06/11 15:00:00', function (event) {
+            $('#sekunden').countdown('2016/06/11 15:00:00', {elapse: true}).on('update.countdown', function (event) {
                 $(this).html(event.strftime('%S'));
             });
     </script>
