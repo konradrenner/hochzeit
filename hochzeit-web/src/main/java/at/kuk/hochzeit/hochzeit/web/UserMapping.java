@@ -24,6 +24,7 @@ import java.security.Principal;
  */
 public enum UserMapping {
     KONI("Konrad Renner"),
+    HOCHZEIT000("Verwandtschaft Mannersdorf"),
     HOCHZEIT100("Ernst Boehm"),
     HOCHZEIT110("Bernhard Boehm"),
     HOCHZEIT120("Brigitte Art"),
