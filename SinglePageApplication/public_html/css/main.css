@@ -310,3 +310,27 @@
         display: inline-block;
     }
 }
+
+.btn_filter {
+    -webkit-border-radius: 7;
+    -moz-border-radius: 7;
+    border-radius: 7px;
+    font-family: Arial;
+    color: #87aa1e;
+    font-size: 20px;
+    background: #ffffff;
+    padding: 10px 20px 10px 20px;
+    border: solid #87aa1e 1px;
+    text-decoration: none;
+}
+
+.btn_filter:hover {
+    background: #87aa1e;
+    color: #ffffff;
+    background-image: -webkit-linear-gradient(top, #87aa1e, #6a8518);
+    background-image: -moz-linear-gradient(top, #87aa1e, #6a8518);
+    background-image: -ms-linear-gradient(top, #87aa1e, #6a8518);
+    background-image: -o-linear-gradient(top, #87aa1e, #6a8518);
+    background-image: linear-gradient(to bottom, #87aa1e, #6a8518);
+    text-decoration: none;
+}
