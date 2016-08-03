@@ -37,3 +37,72 @@ function resetNavUnderline(){
     $('#upload_item').removeClass('navtext_selected');
     $('#geschenke_item').removeClass('navtext_selected');
 }
+
+function selectGasthausBilder() {
+    $('#bilder_gasthaus').show();
+    $('#bilder_stuben').hide();
+    $('#bilder_mannersdorf').hide();
+    $('#bilder_standesamt').hide();
+    $('#bilder_kirche').hide();
+    $('#bilder_agape').hide();
+    $('#bilder_brautstehlen').hide();
+}
+
+function selectStubenBilder() {
+    $('#bilder_stuben').show();
+    $('#bilder_gasthaus').hide();
+    $('#bilder_mannersdorf').hide();
+    $('#bilder_standesamt').hide();
+    $('#bilder_kirche').hide();
+    $('#bilder_agape').hide();
+    $('#bilder_brautstehlen').hide();
+}
+
+function selectMannersdorfBilder() {
+    $('#bilder_mannersdorf').show();
+    $('#bilder_gasthaus').hide();
+    $('#bilder_stuben').hide();
+    $('#bilder_standesamt').hide();
+    $('#bilder_kirche').hide();
+    $('#bilder_agape').hide();
+    $('#bilder_brautstehlen').hide();
+}
+
+function selectStandesamtBilder() {
+    $('#bilder_standesamt').show();
+    $('#bilder_gasthaus').hide();
+    $('#bilder_stuben').hide();
+    $('#bilder_mannersdorf').hide();
+    $('#bilder_kirche').hide();
+    $('#bilder_agape').hide();
+    $('#bilder_brautstehlen').hide();
+}
+
+function selectKircheBilder() {
+    $('#bilder_kirche').show();
+    $('#bilder_gasthaus').hide();
+    $('#bilder_stuben').hide();
+    $('#bilder_mannersdorf').hide();
+    $('#bilder_standesamt').hide();
+    $('#bilder_agape').hide();
+    $('#bilder_brautstehlen').hide();
+}
+function selectAgapeBilder() {
+    $('#bilder_agape').show();
+    $('#bilder_gasthaus').hide();
+    $('#bilder_stuben').hide();
+    $('#bilder_mannersdorf').hide();
+    $('#bilder_standesamt').hide();
+    $('#bilder_kirche').hide();
+    $('#bilder_brautstehlen').hide();
+}
+
+function selectBrautStehlenBilder() {
+    $('#bilder_brautstehlen').show();
+    $('#bilder_gasthaus').hide();
+    $('#bilder_stuben').hide();
+    $('#bilder_mannersdorf').hide();
+    $('#bilder_standesamt').hide();
+    $('#bilder_kirche').hide();
+    $('#bilder_agape').hide();
+}
