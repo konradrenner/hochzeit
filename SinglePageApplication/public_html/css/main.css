@@ -311,6 +311,11 @@
     }
 }
 
+.galerie_buttons{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .btn_filter {
     -webkit-border-radius: 7;
     -moz-border-radius: 7;
@@ -322,6 +327,7 @@
     padding: 10px 20px 10px 20px;
     border: solid #87aa1e 1px;
     text-decoration: none;
+    margin: 5px;
 }
 
 .btn_filter:hover {
@@ -333,4 +339,42 @@
     background-image: -o-linear-gradient(top, #87aa1e, #6a8518);
     background-image: linear-gradient(to bottom, #87aa1e, #6a8518);
     text-decoration: none;
+}
+
+@media (min-width: 800px) {
+    .container_zwischenbild {
+        height: 550px;
+        background-image: url(zwischenbild.jpg);
+        background-attachment: fixed;
+        background-position: center bottom;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 799px) {
+    .container_zwischenbild {
+        height: 550px;
+        background-image: url(zwischenbild.jpg);
+        background-position: center;
+        display: block;
+        width: 100%;
+    }
+}
+
+.abstand_oben{
+    margin-top: 5%;
+}
+
+.download_section{
+    width: 100%;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.download_section_button{
+    margin-top: 50px;
+    display: inline-block;
 }
