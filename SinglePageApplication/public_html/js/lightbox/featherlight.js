@@ -136,7 +136,7 @@
 				$background = $(self.background || [
 					'<div class="'+css+'-loading '+css+'">',
                         '<div class="' + css + '-content">',
-                        '<div class="upload-title-text" >Medien hochladen</div>',
+                        '<div class="upload-title-text" >Medien</div>',
 							'<span class="'+css+'-close-icon '+ self.namespace + '-close">',
 								self.closeIcon,
                         '</span>',
