@@ -45,47 +45,17 @@
           $("#brautpaar").load("brautpaar.html"); 
         });
         $(function(){
-        	if(isAfterWedding()){
-        			$("#ablauf_ueberschrift_text").first().text("IMPRESSIONEN");
-        			$("#ablauf_item").first().text("IMPRESSIONEN");
-        			$("#geschenke_item").first().text("DANKE");
-        			//$("#ablauf_daten").load("galerie.html");
-        	}else{
-        		$("#galerie_daten").remove();
-        		$("#galerie_upload").remove();
             if(window.screen.availWidth >= 1025){
                 $("#ablauf_daten").load("ablauf.html"); 
             }else{
                 $("#ablauf_daten").load("ablauf_mobile.html"); 
             }
           }
-        });
+        );
         $(function(){
-        	if(isAfterWedding()){
-        		$("#route_daten").remove();
-        		$("#route").remove();
-        		$("#li_route").remove();
-                        $("#text_geschenke").remove();
-                        document.getElementById("geschenke_daten").style.backgroundImage="url(css/danke1_1.jpg)";
-        	}else{
-        		$("#route_daten").load("kontakt.html");
-                        $("#text_danke").remove();
-        	}
-        });
-        $(function(){
-        	var datum = new Date();
-        	if(isAfterWedding()){
-        		$("#unterkuenfte_daten").remove();
-        		$("#unterkuenfte").remove();
-        		$("#li_unterkuenfte").remove();
-        	}else{
-        		$("#unterkuenfte_daten").load("unterkuenfte.html"); 
-        	}
+            document.getElementById("geschenke_daten").style.backgroundImage="url(css/danke1_1.jpg)";
         });
         
-        function isAfterWedding(){
-        	return true;
-        }
         
         function isScrolledIntoView(elem)
         {
@@ -117,10 +87,10 @@
               <ul class="cl-effect-3 nav nav-justified" id="cl-effect-3">
                   <li><a id="home_item" class="navtext_selected" href="#home" onclick="selectHome()">HOME</a></li>
                   <li><a id="brautpaar_item" class="navtext" href="#brautpaar" onclick="selectBrautpaar()">BRAUTPAAR</a></li>
-                  <li><a id="ablauf_item" class="navtext" href="#ablauf" onclick="selectAblauf()">ABLAUF</a></li>
+                  <li><a id="ablauf_item" class="navtext" href="#ablauf" onclick="selectAblauf()">IMPRESSIONEN</a></li>
                   <!-- <li id="li_route"><a id="route_item" class="navtext" href="#route" onclick="selectRoute()">ROUTE</a></li>
                   <li id="li_unterkuenfte"><a id="unterkuenfte_item" class="navtext" href="#unterkuenfte" onclick="selectUnterkuenfte()">UNTERKÜNFTE</a></li>  -->
-                  <li><a id="geschenke_item" class="navtext" href="#geschenke" onclick="selectGeschenke()">GESCHENKE</a></li>
+                  <li><a id="geschenke_item" class="navtext" href="#geschenke" onclick="selectGeschenke()">DANKE</a></li>
               </ul> <!-- END .cl-effect-3, .nav, .nav-justified -->
           </div>
 
@@ -130,7 +100,7 @@
     </div>
     <script>
         $( window ).scroll(function() {
-        	  if(isAfterWedding() && ((window.innerHeight + window.scrollY) >= document.body.offsetHeight)){
+            if(((window.innerHeight + window.scrollY) >= document.body.offsetHeight)){
         	  	  selectGeschenke();
             }else if(isScrolledIntoView($('#brautpaar')) || isScrolledIntoView($('#countdown'))){
                 selectBrautpaar();
@@ -222,7 +192,6 @@
             });
             $('#tage').countdown('2016/06/16 15:00:00', {elapse: true}).on('update.countdown', function (event) {
                 
-                if(isAfterWedding()){
                     var aktDate = new Date();
                     var tageDesMonats = new Date(aktDate.getFullYear(),aktDate.getMonth()+1,0).getDate();
                     var tagDesMonats = aktDate.getDate();
@@ -244,26 +213,6 @@
                     }
                 
                     $(this).html(korrekteTage);
-                }else{
-                    var aktDate = new Date();
-                    var tageDesMonats = new Date(aktDate.getFullYear(),aktDate.getMonth()+1,0).getDate();
-                    var tagDesMonats = aktDate.getDate();
-
-                    var differenz = tageDesMonats - tagDesMonats;
-
-                    var korrekteTage;
-                    if(tagDesMonats <= 11){
-                        korrekteTage = 11 - tagDesMonats;
-
-                        if(korrekteTage < 10){
-                            korrekteTage = "0"+korrekteTage;
-                        }
-                    }else{
-                        korrekteTage = differenz + 11;
-                    }
-                
-                    $(this).html(korrekteTage);                
-                }
                 
             });
             $('#stunden').countdown('2016/06/11 15:00:00', {elapse: true}).on('update.countdown', function (event) {
@@ -285,13 +234,10 @@
         <div class="row brautpaar">
             <hr class="abschnitt_hr_lang" >
             <hr class="abschnitt_hr_kurz" >
-            <div id="ablauf_ueberschrift_text" class="ueberschrift_brautpaar">ABLAUF</div>
+            <div id="ablauf_ueberschrift_text" class="ueberschrift_brautpaar">IMPRESSIONEN</div>
         </div>
     </div> 
-    <script src="js/ablauf.js"></script>    
 
-    <div id="ablauf_daten" class="container">
-    </div>
     <div id="galerie_daten" class="container">
         <div class="galerie_buttons">
             <button type="button" class="btn_filter" onclick="selectStubenBilder()">Stuben</button>
@@ -872,6 +818,11 @@
 
             <div id="bilder_gasthaus">
                 <div class="col-md-2">
+                    <a href="img/galerie/gh_bock/image_0.jpg" class="thumbnail" data-gallery>
+                        <img src="img/galerie/gh_bock/image_0.jpg" >
+                    </a>
+                </div>
+                <div class="col-md-2">
                     <a href="img/galerie/gh_bock/image_1.jpg" class="thumbnail" data-gallery>
                         <img src="img/galerie/gh_bock/image_1.jpg" >
                     </a>
@@ -1131,6 +1082,12 @@
         </div>
 
         <div class="download_section">
+            <div style="font-size: 1.2em">
+                Diese und weitere Fotos, sowie Hochzeitsvideos von unserem Fotografen, Filmer und unseren Gästen können mit <br>dem Button "Medien downloaden" herunter geladen werden.<br>
+            </div>
+            <div>
+                <br>Die Virusprüfung-Warnung kann ignoriert werden. Bitte den Button "Trotzdem herunterladen" für den Download klicken.
+            </div>
             <div class="download_section_button">
                 <a href="#" data-featherlight="<iframe class='lightbox' src='download/download.html' width='650' height='440' id='galerie_iframe' style='border:none;'></iframe>" class="btn-hochzeit" role="button">Medien downloaden</a>
             </div>
@@ -1192,37 +1149,11 @@
     </div>
     -->
 
-    <div id="route" class="leerzeile_route">
-        &nbsp;
-    </div>
-
-    <div id="route_daten" class="jumbotron_kontakt">
-    </div>
-
-    <div id="unterkuenfte" class="jumbotron">
-        <div class="row brautpaar">
-            <hr class="abschnitt_hr_lang" >
-            <hr class="abschnitt_hr_kurz" >
-            <div class="ueberschrift_brautpaar">UNTERKÜNFTE</div>
-        </div>
-    </div> 
-    <div id="unterkuenfte_daten" class="container">
-    </div>
-
     <div id="geschenke" class="leerzeile_route">
         &nbsp;
     </div>
 
     <div id="geschenke_daten" class="container_geschenke">
-        <div id="text_geschenke">
-            <div class="geschenke-text-ueberschrift">
-                <p>Träume verwirklichen</p>
-            </div>
-            <div class="geschenke-text">
-                <p>Das beste Geschenk ist eure Zeit und gute Laune,<br> damit macht ihr diesen für uns wichtigen Tag zum schönsten in unseren Leben.</p>
-                <p>Falls ihr uns noch zusätzlich Freude machen wollt, freuen wir uns über einen Geldbeitrag.</p>
-            </div>
-        </div>
         <div id="text_danke">
             <div class="geschenke-text-ueberschrift">
                 <p>Unsere Hochzeit, ein Tag der uns immer in Erinnerung bleiben wird</p>
@@ -1255,8 +1186,8 @@
 		    <a class="next">›</a>
 		    <a class="close">×</a>
 		    <a class="play-pause"></a>
-		    <ol class="indicator"></ol>
-		    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+                    <ol class="indicator"></ol>
+                    <!-- The modal dialog, which will be used to wrap the lightbox content -->
 		    <div class="modal fade">
 		        <div class="modal-dialog">
 		            <div class="modal-content">
