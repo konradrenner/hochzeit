@@ -1,12 +1,27 @@
 
 
 /* ==========================================================================
-   Author's custom styles
+   Author's custom styles 
    ========================================================================== */
 
-@media (max-width: 799px){
-    .galerie_buttons { 
+@media (min-width: 800px){
+    .galerie_bildauswahl { 
         display: none;
+    }
+}
+
+@media (max-width: 670px){
+    .download_section { 
+        display: none;
+    }
+}
+
+@media (max-width: 799px){
+    .galerie_bildauswahl { 
+        text-align: center;
+        vertical-align: central;
+        font-size: 1.3em;
+        margin: 5%;
     }
 }
 
