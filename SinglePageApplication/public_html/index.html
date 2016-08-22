@@ -32,6 +32,7 @@
         <script src="js/vendor/bgswitcher/jquery.bgswitcher.js"></script>
         <script src="js/vendor/countdown/jquery.countdown.min.js"></script>
         <script src="js/isotope/isotope.pkgd.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
 
         <script> 
         $(function(){
@@ -76,7 +77,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
           <div class="navbar-header">
-              <button data-target="#collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+              <button data-target="#collapse" data-toggle="collapse" class="navbar-toggle" type="button">
                   <span class="sr-only">Toggle navigation</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
@@ -135,7 +136,6 @@
     	<a class="next">›</a>
     	<a class="close">×</a>
     	<a class="play-pause"></a>
-    	<ol class="indicator"></ol>
     </div>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -1174,70 +1174,13 @@
             <p>Made with love, from K-UND-K</p>
         </footer>
     </div> <!-- /container -->        
-
-    <!-- TODO Filerirz verwenden fuer Filterung -->
-    <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-		<div id="blueimp-gallery" class="blueimp-gallery">
-		    <!-- The container for the modal slides -->
-		    <div class="slides"></div>
-		    <!-- Controls for the borderless lightbox -->
-		    <h3 class="title"></h3>
-		    <a class="prev">‹</a>
-		    <a class="next">›</a>
-		    <a class="close">×</a>
-		    <a class="play-pause"></a>
-                    <ol class="indicator"></ol>
-                    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-		    <div class="modal fade">
-		        <div class="modal-dialog">
-		            <div class="modal-content">
-		                <div class="modal-header">
-		                    <button type="button" class="close" aria-hidden="true">&times;</button>
-		                    <h4 class="modal-title"></h4>
-		                </div>
-		                <div class="modal-body next"></div>
-		                <div class="modal-footer">
-		                    <button type="button" class="btn btn-default pull-left prev">
-		                        <i class="glyphicon glyphicon-chevron-left"></i>
-		                        Previous
-		                    </button>
-		                    <button type="button" class="btn btn-primary next">
-		                        Next
-		                        <i class="glyphicon glyphicon-chevron-right"></i>
-		                    </button>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-    
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>');</script>
 
    	<script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-    
-    <script src="js/gallery/jquery.blueimp-gallery.min.js"></script> 
-    <script>
-			document.getElementById('galerie_bilder').onclick = function (event) {
-    	event = event || window.event;
-    	var target = event.target || event.srcElement,
-        link = target.src ? target.parentNode : target,
-        options = {index: link, event: event},
-        links = this.getElementsByTagName('a');
-    		blueimp.Gallery(links, options);
-			};
-    </script>
-    <script src="js/lightbox/featherlight.js" type="text/javascript" charset="utf-8"></script>
-    <script>
+        <script src="js/gallery/jquery.blueimp-gallery.min.js"></script>
+        <script src="js/lightbox/featherlight.js" type="text/javascript" charset="utf-8"></script>
+        <script>
         $('.grid').isotope({
             // options
             itemSelector: '.grid-item',

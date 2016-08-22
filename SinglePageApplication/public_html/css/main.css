@@ -5,6 +5,12 @@
    ========================================================================== */
 
 @media (max-width: 799px){
+    .galerie_buttons { 
+        display: none;
+    }
+}
+
+@media (max-width: 799px){
     .abschnitt_hr_lang { 
         display: block;
         color: #87aa1e;
